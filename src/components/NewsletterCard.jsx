@@ -32,7 +32,7 @@ const NewsletterCard = () => {
        {Cards.map((card) => (   
             <div 
              key={card.id}
-             className='relative rounded-4xl shadow-gray-400 hover:shadow-lg hover:scale-105 transition overflow-hidden'>
+             className='relative rounded-4xl shadow-gray-400 hover:shadow-lg hover:scale-104 transition overflow-hidden'>
                 <img 
                  src={card.image}
                  alt={card.title}
