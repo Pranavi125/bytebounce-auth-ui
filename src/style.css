@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+body {
+  @apply bg-[#FAF9F5] text-gray-600; /* or any Tailwind color class */
+}
