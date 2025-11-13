@@ -1,13 +1,15 @@
+import Footer from './components/Footer'
 import JoinUs from './components/JoinUs'
 import NewsletterCard from './components/NewsletterCard'
+import Subscribe from './components/Subscribe'
 
 
 function App() {
 
   return (
    <>
-   <NewsletterCard/>
-   <JoinUs/>
+   <Subscribe/>
+   <Footer/>
 
    </>
   )
