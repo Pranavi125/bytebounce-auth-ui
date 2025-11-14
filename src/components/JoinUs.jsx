@@ -33,7 +33,7 @@ const JoinUs = () => {
             friendly readers
        </h1>
 
-       <div className="flex flex-wrap justify-center gap-20 mt-8">
+       <div className="flex flex-wrap justify-center gap-20 mt-6">
         <div>
           <h2 className="text-3xl font-semibold text-gray-800">
             <CountUp end={stats.subscribers} duration={2} />+
