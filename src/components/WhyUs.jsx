@@ -10,12 +10,11 @@ const WhyUs = () => {
         
         {/* top section */}
         <section className='md:mb-10 flex gap-6 md:gap-10 w-full mb-0'>
-          <div className='bg-white w-full md:w-3/5 rounded-t-[60px] p-8 md:p-10'>
+          <div className='bg-white hover:scale-102 w-full h-1/3 md:w-3/5 rounded-t-[60px] p-6 md:p-10'>
             <h2 className='font-bold text-lg md:text-xl mb-4'>Why ByteBounce?</h2>
             <p className='text-sm md:text-base leading-relaxed text-gray-700'>
               We analyzed hundreds of companies over our startups as B-Corp 
-              Certification tells us a company has committed to high social & environmental 
-              standards, benefitting workers, customers, suppliers, community & the planet. 
+              Certification tells us a company has committed to high social & benefitting workers, customers, suppliers, community & the planet. 
               By supporting our mission-driven Certified B-Corps, you're helping sustain our morning ritual.
             </p>
           </div>
@@ -51,7 +50,7 @@ const WhyUs = () => {
         
         {/* bottom section*/}
         <section className='md:mt-10 flex gap-6 md:gap-10 w-full'>
-          <div className='hidden md:flex text-xl flex-col justify-center gap-6 w-2/5 p-6'>
+          <div className='hidden md:flex text-xl flex-col justify-center gap-6 w-2/5 p-4'>
             <div className='flex items-center gap-4'>
               <div className='bg-blue-900 p-3 rounded-lg'>
                 <svg className='w-6 h-6 text-white fill-white'>
@@ -62,7 +61,7 @@ const WhyUs = () => {
             </div>
             <div className='flex items-center gap-4'>
               <div className='bg-blue-900 p-3 rounded-lg'>
-                <svg className='w-6 h-6 text-white fill-white'>
+                <svg className=' w-6 h-6 text-white fill-white'>
                   <path fillRule='evenodd' d='M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clipRule='evenodd'/>
                 </svg>
               </div>
@@ -77,7 +76,7 @@ const WhyUs = () => {
               <span className='text-white font-medium'>Rich data sources across primary</span>
             </div>
           </div>
-          <div className='bg-white w-full md:w-3/5 rounded-b-[60px] p-6 md:p-10'>
+          <div className='bg-white hover:scale-102  w-full md:w-3/5 rounded-b-[60px] p-6 md:p-10'>
             <div className='space-y-5'>
               <div className='flex gap-3'>
                 <BarChart className="h-8 w-8 p-1 bg-blue-300 rounded"/>
