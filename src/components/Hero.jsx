@@ -60,7 +60,7 @@ export default function Hero() {
             disabled={subscribed}
             className={`${
               subscribed
-                ? "bg-green-600 cursor-not-allowed"
+                ? "bg-[#3C096C] cursor-not-allowed"
                 : "bg-[#3C096C] hover:bg-[#5A189A]"
             } text-white px-6 py-2 rounded-md transition-all duration-300 font-[Albert Sans]`}
           >
