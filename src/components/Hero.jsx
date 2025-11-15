@@ -28,7 +28,7 @@ export default function Hero() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         height: "calc(100vh - 80px)",
-        marginTop: "80px",
+        // marginTop: "80px",
       }}
     >
       {/* Dark overlay for contrast */}
@@ -42,31 +42,34 @@ export default function Hero() {
           We track and compare the world’s companies. Our AI keeps you a step
           ahead of changing markets and competition.
         </p>
+<div className="w-full flex justify-center mt-6 px-2">
+  <form
+    onSubmit={handleSubscribe}
+    className="flex items-center gap-2 rounded-full bg-gray-800/60 backdrop-blur-md p-1 w-full max-w-md"
+  >
+    <input
+      type="email"
+      placeholder="Enter your email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      className="px-4 py-2 w-full rounded-full bg-transparent text-white placeholder-white focus:outline-none font-[Albert Sans]"
+    />
 
-        <form
-          onSubmit={handleSubscribe}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3"
-        >
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="px-4 py-2 w-full sm:w-80 rounded-md bg-gray-500 text-white placeholder-white focus:outline-none font-[Albert Sans]"
-          />
-          <button
-            type="submit"
-            disabled={subscribed}
-            className={`${
-              subscribed
-                ? "bg-[#3C096C] cursor-not-allowed"
-                : "bg-[#3C096C] hover:bg-[#5A189A]"
-            } text-white px-6 py-2 rounded-md transition-all duration-300 font-[Albert Sans]`}
-          >
-            {subscribed ? "Subscribed ✓" : "Subscribe"}
-          </button>
-        </form>
+    <button
+      type="submit"
+      disabled={subscribed}
+      className={`${
+        subscribed
+          ? "bg-[#3C096C] cursor-not-allowed"
+          : "bg-[#3C096C] hover:bg-[#5A189A]"
+      } text-white px-6 py-2 rounded-full transition-all duration-300 font-[Albert Sans]`}
+    >
+      {subscribed ? "Subscribed" : "Subscribe"}
+    </button>
+  </form>
+</div>
+
       </div>
     </section>
   );
