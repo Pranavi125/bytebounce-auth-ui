@@ -1,18 +1,27 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from './components/Footer'
+import JoinUs from './components/JoinUs'
+import NewsletterCard from './components/NewsletterCard'
+import Subscribe from './components/Subscribe'
+import WhyUs from './components/WhyUs'
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LatestNews from './components/LatestNews';
 import Reviews from './components/Reviews';
-import JoinUs from './components/JoinUs';
-import NewsletterCard from './components/NewsletterCard';
+
+
 import SubscribePage from './pages/SubscribePage';
-import Subscribe from "./components/Subscribe";
+
 
 function App() {
   return (
     <BrowserRouter>
       
+
+   
+
 
       <Routes>
         {/* Home Page */}
@@ -26,7 +35,10 @@ function App() {
               <JoinUs />
               <LatestNews />
               <Reviews />
+              
+              <WhyUs/>
               <Subscribe />
+   <Footer/>
             </>
           }
         />

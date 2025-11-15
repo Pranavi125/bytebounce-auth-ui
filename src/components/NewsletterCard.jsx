@@ -34,7 +34,6 @@ const NewsletterCard = () => {
 
   return (
     <main className="min-h-screen px-6 sm:px-10 lg:px-20 py-12">
-
       {/* Heading with proper spacing */}
       <h1 className="text-4xl sm:text-5xl font-bold text-left text-gray-800">
         Newsletters
