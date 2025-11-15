@@ -1,15 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from './components/Footer'
+import JoinUs from './components/JoinUs'
+import NewsletterCard from './components/NewsletterCard'
+import Subscribe from './components/Subscribe'
+import WhyUs from './components/WhyUs'
+
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import LatestNews from './components/LatestNews';
+import Reviews from './components/Reviews';
+
+
+import SubscribePage from './pages/SubscribePage';
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <>
-   <h1>ByteBounce</h1>
-   </>
-  )
+    <BrowserRouter>
+      
+
+   
+
+
+      <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <>
+            <Navbar />
+              <Hero />
+              <NewsletterCard />
+              <JoinUs />
+              <LatestNews />
+              <Reviews />
+              
+              <WhyUs/>
+              <Subscribe />
+   <Footer/>
+            </>
+          }
+        />
+
+        {/* Subscribe Page */}
+        <Route path="/subscribe" element={<SubscribePage />} />
+      </Routes>
+
+      {/* <Footer /> */}
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
