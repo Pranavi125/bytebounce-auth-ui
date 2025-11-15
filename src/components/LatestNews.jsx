@@ -43,7 +43,7 @@ const LatestNews = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
         {/* LEFT: Tall Card */}
-        <div className="h-[600px]">
+        <div className="h-[250px] md:h-[600px]">
           <NewsCard {...articles[0]} fullHeight />
         </div>
 
