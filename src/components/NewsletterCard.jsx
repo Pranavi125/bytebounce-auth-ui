@@ -33,9 +33,9 @@ const NewsletterCard = () => {
   ]
 
   return (
-    <main className="min-h-screen px-6 sm:px-10 lg:px-20 py-12">
+    <main className="px-6 sm:px-10 lg:px-20 py-12">
       {/* Heading with proper spacing */}
-      <h1 className="text-4xl sm:text-5xl font-bold text-left text-gray-800">
+      <h1 className="text-3xl sm:text-4xl font-bold text-left text-gray-800">
         Newsletters
       </h1>
 
@@ -54,7 +54,6 @@ const NewsletterCard = () => {
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
             <div className="absolute bottom-0 left-0 text-white p-6">
               <button className="bg-black/30 px-3 py-1 text-xs mb-1 rounded-2xl border">
                 {card.field}

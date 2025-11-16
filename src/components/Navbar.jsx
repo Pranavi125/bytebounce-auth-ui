@@ -16,7 +16,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="text-2xl font-semibold cursor-pointer">
-          Logo
+         Logo
         </div>
 
         {/* Desktop Menu */}

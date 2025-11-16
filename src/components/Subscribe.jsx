@@ -37,7 +37,7 @@ const Subscribe = () => {
           </span>
 
           <span className="block text-5xl sm:text-6xl font-black leading-tight">
-            LifeNotes
+            ByteBounce
           </span>
         </div>
 
@@ -62,7 +62,6 @@ const Subscribe = () => {
           advice, and highlights from our favourite books.
         </p>
 
-        {/* Your visible form (same style) */}
         <form
           onSubmit={handleSubscribe}
           className="flex items-center gap-2 rounded-full bg-gray-100 p-2 w-full max-w-md"
