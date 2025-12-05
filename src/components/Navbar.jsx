@@ -21,10 +21,10 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-10 text-lg">
-          {["Latest", "Services", "About", "Contact us"].map((item) => (
+          {["Home", "Newsletter", "About", "Subscribe"].map((item) => (
             <li key={item} className="relative group cursor-pointer">
-              <span className="group-hover:text-black">{item}</span>
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              <span className="group-hover:text-[#0077b6]">{item}</span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#0077b6] transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
         </ul>
@@ -32,7 +32,7 @@ export default function Navbar() {
         {/* Desktop Subscribe Button */}
         <button
           onClick={onSubscribe}
-          className="hidden md:block bg-[#3C096C] text-white px-5 py-2 rounded-full hover:bg-[#5A189A] transition-all duration-300"
+          className="hidden md:block bg-[#0094AB] text-white px-5 py-2 rounded-full hover:bg-[#0094AB] transition-all duration-300"
         >
           Subscribe
         </button>
@@ -51,13 +51,13 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-md">
           <ul className="flex flex-col items-center space-y-4 py-6 text-lg">
-            {["Latest", "Services", "About", "Contact us"].map((item) => (
+            {["Home", "Newsletter", "About", "Subscribe"].map((item) => (
               <li key={item} className="cursor-pointer">{item}</li>
             ))}
 
             <button
               onClick={onSubscribe}
-              className="bg-[#3C096C] text-white px-6 py-2 rounded-md hover:bg-[#5A189A]"
+              className="bg-[#0077b6] text-white px-6 py-2 rounded-md"
             >
               Subscribe
             </button>

@@ -55,11 +55,11 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-2xl">
         <h1 className="text-4xl md:text-5xl font-semibold mb-4">
-          Subscribe to the Daily Bounce
+          Unlock Global Opportunities
         </h1>
 
         <p className="text-lg md:text-xl mb-6">
-          We track and compare the world's companies. Stay ahead with insights.
+          Weekly insights on scholarships, study abroad programs, AI tools, job skills, and startup news—curated for ambitious students and early professionals.
         </p>
 
         <form
@@ -78,7 +78,7 @@ export default function Hero() {
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#3C096C] hover:bg-[#5A189A] text-white px-6 py-2 rounded-full transition-all"
+            className="bg-[#0094AB] hover:bg-[#0094AB] text-white px-6 py-2 rounded-full transition-all"
           >
             {loading ? "Processing..." : "Subscribe"}
           </button>
@@ -91,7 +91,7 @@ export default function Hero() {
           onClick={() => setShowPopup(false)}
         >
           <div
-            className="bg-white text-black p-6 rounded-xl shadow-xl max-w-sm w-full"
+            className="bg-white text-[#0077b6] p-6 rounded-xl shadow-xl max-w-sm w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-2xl font-bold mb-3">🎉 Check Your Email</h2>

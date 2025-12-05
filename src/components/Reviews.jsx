@@ -1,35 +1,35 @@
-import React from "react";
 
 const reviews = [
   {
-    name: "Janet",
-    role: "STUDENT",
-    text: "LifeNotes bring so much inspirations to life. As a high school student, I can still resonate with them and some habits in them save me from wasting much of my time. I genuinely appreciate Ali’s hard work and generosity for sharing LifeNotes💕💕",
-    image: "https://i.pravatar.cc/100?img=47",
+    name: "Aarav",
+    role: "UNDERGRAD STUDENT",
+    text: "ByteBounce saves me hours every week. Instead of scrolling endlessly for internships, I get a clean list of verified opportunities right in my inbox. Honestly the most useful email I get.",
+    image: "https://i.pravatar.cc/100?img=12",
   },
   {
-    name: "Gonçalo",
-    role: "IT CONSULTANT",
-    text: "Allowed me to keep active on continuous learning, gather productivity tips, and inspired me to implement new routines that improved my job and life.",
-    image: "https://i.pravatar.cc/100?img=5",
+    name: "Maya",
+    role: "EARLY-CAREER DESIGNER",
+    text: "The insights are gold. Not just links, actual tips on how to stand out, when to apply, and how to craft my applications. Helped me land two interviews already!",
+    image: "https://i.pravatar.cc/100?img=32",
   },
   {
-    name: "Eszter",
-    role: "TEACHER",
-    text: "LifeNotes helps and inspires me a lot. I love your thoughts, and findings on work-life balance. I’m also interested in entrepreneurship, so everything about LifeNotes is useful to me.",
-    image: "https://i.pravatar.cc/100?img=49",
+    name: "Zane",
+    role: "COMPUTER SCIENCE STUDENT",
+    text: "I love that everything is curated. No spam, no irrelevant roles just high-quality opportunities for students like me. The weekly format keeps me consistent without feeling overwhelmed.",
+    image: "https://i.pravatar.cc/100?img=18",
   },
   {
-    name: "Rudra",
-    role: "STUDENT",
-    text: "Ali’s newsletter has significantly impacted my life over the past eight months. His insights have provided me with a broader perspective on various topics, particularly in productivity, studying, and content creation.",
-    image: "https://i.pravatar.cc/100?img=15",
+    name: "Ritika",
+    role: "MBA CANDIDATE",
+    text: "I’ve subscribed to a lot of newsletters, but ByteBounce is the only one I actually open. The career strategies and expert advice have been incredibly helpful during placements.",
+    image: "https://i.pravatar.cc/100?img=45",
   },
 ];
 
+
 const Reviews = () => {
   return (
-    <section className="bg-[#f5f5dc] mx-auto py-12 px-6">
+    <section className="bg-[#DAF3FF] mx-auto py-12 px-6">
       <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900">Reviews</h2>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
