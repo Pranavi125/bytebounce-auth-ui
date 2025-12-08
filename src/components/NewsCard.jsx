@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewsCard = ({ category, title, author, time, image, fullHeight }) => {
+const NewsCard = ({ category, title, author, time, image }) => {
   return (
     <div
       className={`relative rounded-2xl overflow-hidden shadow-md group w-full h-full`}

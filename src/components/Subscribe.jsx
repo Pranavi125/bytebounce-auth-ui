@@ -78,7 +78,7 @@ const Subscribe = () => {
           <button
             type="submit"
             disabled={subscribed}
-            className="bg-[#00A8C5] text-white hover:text-black hover:bg-blue-100 py-2 px-5 rounded-full whitespace-nowrap text-sm sm:text-base"
+            className="bg-[#0D868C] text-white hover:bg-[#0A6266] py-2 px-5 rounded-full whitespace-nowrap text-sm sm:text-base"
           >
             {subscribed ? "Subscribed ✓" : "Subscribe"}
           </button>

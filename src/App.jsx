@@ -28,15 +28,15 @@ function App() {
           path="/"
           element={
             <>
-            <div className="bg-[#EAF3FF] min-h-screen">
+            <div className="min-h-screen">
             <Navbar />
-              <Hero />
+              <Hero id="Home"/>
               <Suceed />
               <JoinUs />
-              <NewsletterCard /> 
+              <NewsletterCard id="newsletter"/> 
               <Reviews />
               
-              <WhyUsnew/>
+              <WhyUsnew id="about"/>
               <Subscribe />
             <Footer/>
             </div>

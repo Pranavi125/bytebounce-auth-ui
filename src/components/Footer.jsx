@@ -32,7 +32,7 @@ const Footer = () => {
             <p className="text-sm opacity-70 mb-3 max-w-[300px]">
               One email per week. No spam. High-value opportunities only.
             </p>
-            <button className="bg-[#0094AB] px-4 py-2 rounded-lg text-sm font-medium">
+            <button className="bg-[#0D868C] text-white hover:bg-[#0A6266] px-4 py-2 rounded-lg text-sm font-medium">
               Subscribe
             </button>
           </div>
@@ -52,7 +52,7 @@ const Footer = () => {
             <p className="text-xs opacity-70 mb-2 max-w-[300px]">
               One email per week. No spam. High-value opportunities only.
             </p>
-            <button className="bg-[#00A8C5] px-2 py-1 rounded-lg text-sm font-medium">
+            <button className="bg-[#0D868C] text-white hover:bg-[#0A6266] px-2 py-1 rounded-lg text-sm font-medium">
               Subscribe
             </button>
     </div>
@@ -70,7 +70,6 @@ const Footer = () => {
 
       <hr className="mt-6 border-gray-700" />
 
-      {/* Social Icons */}
      
 
       <p className="text-center enter text-xs opacity-60 pb-4 mt-4">
