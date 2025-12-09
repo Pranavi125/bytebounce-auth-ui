@@ -58,7 +58,7 @@ const LatestNews = () => {
         </div>
 
         {/* RIGHT: News List (same height as others) */}
-        <div className="flex flex-col justify-between h-[600px] overflow-hidden">
+        <div className="flex flex-col justify-between md:h-[600px] overflow-hidden">
           <div className="flex flex-col justify-between h-full divide-y divide-gray-200">
             {listItems.map((item, i) => (
               <NewsListItem key={i} {...item} />

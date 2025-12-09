@@ -36,8 +36,8 @@ const Subscribe = () => {
             />
           </span>
 
-          <span className="block text-5xl sm:text-6xl font-black leading-tight">
-            LifeNotes
+          <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#96E6A1] bg-clip-text text-transparent block text-5xl sm:text-6xl font-black leading-tight">
+            ByteBounce
           </span>
         </div>
 
@@ -62,10 +62,9 @@ const Subscribe = () => {
           advice, and highlights from our favourite books.
         </p>
 
-        {/* Your visible form (same style) */}
         <form
           onSubmit={handleSubscribe}
-          className="flex items-center gap-2 rounded-full bg-gray-100 p-2 w-full max-w-md"
+          className="flex items-center gap-2 rounded-full bg-white p-2 w-full max-w-md"
         >
           <input
             type="email"
@@ -79,7 +78,7 @@ const Subscribe = () => {
           <button
             type="submit"
             disabled={subscribed}
-            className="bg-blue-200 hover:bg-blue-100 py-2 px-5 rounded-full whitespace-nowrap text-sm sm:text-base"
+            className="bg-[#0D868C] text-white hover:bg-[#0A6266] py-2 px-5 rounded-full whitespace-nowrap text-sm sm:text-base"
           >
             {subscribed ? "Subscribed ✓" : "Subscribe"}
           </button>
