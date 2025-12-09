@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import {
-  ArrowRight, Briefcase, Award, Sparkles,
+  ArrowRight, Briefcase, Award, TrendingUp, Users, Sparkles,
   GraduationCap, Rocket, Zap, Target, Globe, BookOpen
 } from "lucide-react";
+
+import heroimage from "../assets/image/image.png";
 
 /* ------------------------- CUSTOM BUTTON ------------------------------ */
 function Button({ children, variant = "default", className = "", ...props }) {
@@ -20,6 +22,7 @@ function Button({ children, variant = "default", className = "", ...props }) {
     </button>
   );
 }
+/* ---------------------------------------------------------------------- */
 
 export default function MainHero() {
   const [openModal, setOpenModal] = useState(false);
@@ -30,7 +33,6 @@ export default function MainHero() {
       {openModal && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-6 w-full max-w-lg shadow-xl relative">
-            {/* Close Button */}
             <button
               onClick={() => setOpenModal(false)}
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl"
@@ -39,7 +41,7 @@ export default function MainHero() {
             </button>
 
             <h2 className="text-xl font-semibold mb-4 text-center">
-              Subscribe to ByteBounce Updates 
+              Subscribe to Bytebounce Updates 🚀
             </h2>
 
             <iframe
@@ -57,12 +59,18 @@ export default function MainHero() {
       {/* --------------------------- HERO SECTION ---------------------------- */}
       <section className="relative pt-24 pb-12 overflow-hidden min-h-[90vh] flex flex-col">
 
+        {/* Background Mesh */}
         <div className="absolute inset-0 -z-20">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0D868C33] rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#0D868C1A] rounded-full blur-2xl" />
         </div>
 
-        {/* Grid Overlay */}
+        {/* Hero Image */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] sm:w-[55%] md:w-[45%] lg:w-[38%] pointer-events-none -z-10 opacity-90">
+          <img src={heroimage} alt="Shape" className="w-full h-auto object-contain" />
+        </div>
+
+        {/* Grid Background */}
         <div
           className="absolute inset-0 -z-30 opacity-[0.08]"
           style={{
@@ -74,24 +82,16 @@ export default function MainHero() {
 
         {/* Floating Icons */}
         <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
-
           <style>
             {`
-              @keyframes float {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-12px); }
-                100% { transform: translateY(0px); }
-              }
-              @keyframes float-slow {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-18px); }
-                100% { transform: translateY(0px); }
-              }
-              .animate-float { animation: float 4s ease-in-out infinite; }
-              .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
-            `}
+            @keyframes float { 0% {transform:translateY(0)} 50%{transform:translateY(-12px)} 100%{transform:translateY(0)} }
+            @keyframes float-slow { 0%{transform:translateY(0)} 50%{transform:translateY(-18px)} 100%{transform:translateY(0)} }
+            .animate-float { animation: float 4s ease-in-out infinite; }
+            .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+          `}
           </style>
 
+          {/* ICONS */}
           <div className="absolute top-[12%] left-[4%] md:left-[10%] w-10 h-10 rounded-xl bg-[#0D868C26] flex items-center justify-center animate-float">
             <Briefcase className="w-5 h-5 text-[#0D868C99]" />
           </div>
@@ -133,7 +133,6 @@ export default function MainHero() {
         <div className="container mx-auto px-4 flex-1 flex flex-col justify-center">
           <div className="max-w-4xl mx-auto text-center mb-12">
 
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-[#0D868C0D] border border-[#0D868C33] rounded-full">
               <div className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0D868C] opacity-75"></span>
@@ -144,7 +143,6 @@ export default function MainHero() {
               </span>
             </div>
 
-            {/* Heading */}
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
               Launch Your Career With{" "}
               <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#96E6A1] bg-clip-text text-transparent">
@@ -152,7 +150,6 @@ export default function MainHero() {
               </span>
             </h1>
 
-            {/* Subtitle */}
             <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10">
               The #1 platform for students and fresh graduates to learn,
               discover{" "}
@@ -162,7 +159,7 @@ export default function MainHero() {
               <span className="text-[#1F2A36] font-medium"> internships</span>.
             </p>
 
-            {/* CTA BUTTON — opens modal */}
+            {/* CTA BUTTON — OPENS SUBSTACK MODAL */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 className="px-8 py-6 text-base group"
