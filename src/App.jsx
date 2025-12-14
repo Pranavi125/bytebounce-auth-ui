@@ -1,55 +1,60 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from './components/Footer'
-import JoinUs from './components/JoinUs'
-import NewsletterCard from './components/NewsletterCard'
-import Subscribe from './components/Subscribe'
-import WhyUs from './components/WhyUs'
-import WhyUsnew from './components/WhyUsnew'
-import Suceed from './components/Succeed'
 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import LatestNews from './components/LatestNews';
-import Reviews from './components/Reviews';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import JoinUs from "./components/JoinUs";
+import NewsletterCard from "./components/NewsletterCard";
+import Subscribe from "./components/Subscribe";
+import WhyUs from "./components/WhyUs";
+import Suceed from "./components/Succeed";
+import Reviews from "./components/Reviews";
 
-
-import SubscribePage from './pages/SubscribePage';
+import SubscribePage from "./pages/SubscribePage";
 import ContactUsPage from "./pages/ContactUsPage";
-
+import NewsletterDetail from "./components/NewsletterDetails";
 
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
+
         {/* Home Page */}
         <Route
           path="/"
           element={
-            <>
             <div className="min-h-screen">
-            <Navbar />
-              <Hero id="Home"/>
+              <Navbar />
+              <Hero id="Home" />
               <Suceed />
               <JoinUs />
-              <NewsletterCard id="newsletter"/> 
+              <NewsletterCard id="newsletter" />
               <Reviews />
-              
-              <WhyUsnew id="about"/>
+              <WhyUs />
               <Subscribe />
-            <Footer/>
+              <Footer />
             </div>
-            </>
+          }
+        />
+
+        <Route
+          path="/newsletter/:id"
+          element={
+            <div className="min-h-screen">
+              <Navbar />
+              <NewsletterDetail />
+              <Footer />
+            </div>
           }
         />
 
         {/* Subscribe Page */}
         <Route path="/subscribe" element={<SubscribePage />} />
 
-      <Route path="/contactus" element={<ContactUsPage />} />
-      </Routes>
+        {/* Contact Us Page */}
+        <Route path="/contactus" element={<ContactUsPage />} />
 
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -5,7 +5,7 @@ const WhyUs = () => {
     <main className='bg-[#00A8C5] min-h-screen mx-auto p-4 md:p-16'>
       <div className='flex flex-col max-w-5xl justify-center gap-4 md:gap-0 items-center min-h-screen mx-auto'>
         
-        <h1 className='text-white text-3xl md:text-4xl font-bold mb-8 md:mb-12 underline'>
+        <h1 className='text-white text-4xl md:text-5xl font-bold mb-8 md:mb-12 underline'>
           Why ByteBounce?
         </h1>
         
@@ -19,25 +19,6 @@ const WhyUs = () => {
               curated by experts who understand your goals. 
             </p>
 
-            {/* STATS */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-[#0077b6]enter">
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">10,000+</p>
-                <p className="text-gray-600 text-sm">Active Subscribers</p>
-              </div>
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">50+</p>
-                <p className="text-gray-600 text-sm">Countries Reached</p>
-              </div>
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">95%</p>
-                <p className="text-gray-600 text-sm">Open Rate</p>
-              </div>
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">200+</p>
-                <p className="text-gray-600 text-sm">Universities</p>
-              </div>
-            </div>
           </div>
 
           {/* RIGHT BLUE TEXT LIST */}

@@ -31,7 +31,7 @@ const Reviews = () => {
   return (
     <section className="bg-[#DAF3FF] mx-auto py-12 px-6">
       <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900">Reviews</h2>
+      <h2 className="text-5xl text-center mb-8"><span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#7FD68C] bg-clip-text text-transparent font-bold mb-10">Reviews </span></h2>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {reviews.map((review, index) => (
           <div
