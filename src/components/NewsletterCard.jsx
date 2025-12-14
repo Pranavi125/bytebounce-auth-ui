@@ -40,7 +40,7 @@ const NewsletterCard = () => {
     <main className="px-6 sm:px-10 lg:px-20 py-16">
 
        <h2 className="text-5xl text-center mb-8">
-          <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#7FD68C] bg-clip-text text-transparent font-bold mb-10">Newsletters 
+          <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent font-bold mb-10">Newsletters 
           </span>
           </h2>
 
