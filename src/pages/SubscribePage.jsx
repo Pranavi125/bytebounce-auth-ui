@@ -31,12 +31,12 @@ const NewsletterSection = () => {
 
       {/* LEFT SECTION */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8">
-        <h1 className="text-3xl md:text-4xl font-semibold text-center mb-6">
+        <h1 className="text-3xl md:text-4xl font-semibold text-[#0077b6]enter mb-6">
           Subscribe to the Daily Bounce
         </h1>
 
         <div className="bg-white shadow-md p-6 rounded-md w-full max-w-lg">
-          <p className="text-gray-700 mb-3 text-sm md:text-base">
+          <p className="text-gray-700 mb-3 text-sm md:text-[#00A8C5]ase">
             Delivered to your inbox every morning and prepares you for your day in minutes.
           </p>
 
@@ -98,9 +98,9 @@ const NewsletterSection = () => {
 
       {/* POPUP MODAL */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+        <div className="fixed inset-0 bg-[#00A8C5]lack/40 backdrop-blur-sm flex justify-center items-center z-50 p-4">
 
-          <div className="bg-[#FBF5EF] p-8 rounded-2xl shadow-xl max-w-lg w-full text-center">
+          <div className="bg-[#FBF5EF] p-8 rounded-2xl shadow-xl max-w-lg w-full text-[#0077b6]enter">
             <h2 className="text-4xl font-bold mb-4">
               Thank You 🎉
             </h2>
@@ -117,7 +117,7 @@ const NewsletterSection = () => {
 
             <button
               onClick={() => navigate("/")}
-              className="bg-[#68C7E8] text-black px-6 py-3 rounded-full font-medium hover:bg-[#7bd6f3] transition-all"
+              className="bg-[#68C7E8] text-[#00A8C5]lack px-6 py-3 rounded-full font-medium hover:bg-[#7bd6f3] transition-all"
             >
               Go Back To Previous Page
             </button>

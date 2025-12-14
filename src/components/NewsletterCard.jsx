@@ -1,4 +1,3 @@
-import React from 'react'
 import article1 from '../assets/image/article1.jpg'
 import article2 from '../assets/image/article2.jpg'
 import article3 from '../assets/image/article3.jpg'
@@ -8,25 +7,24 @@ const NewsletterCard = () => {
   const Cards = [
     {
       id: 1,
-      title: "The Driftless",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. amet eum inventore explicabo odio deserunt accusantium suscipit aliquam provident numquam culpa quae voluptatibus officia! Optio!",
+      title: "How Small Models Are Quietly Redefining AI",
+      description:"The AI world loves massive models, but a new trend is emerging: compact, efficient systems outperforming giants in speed, cost, and domain specialization. Here’s why small is the new powerful.",
       image: article1,
       field: "AI"
     },
     {
       id: 2,
-      title: "The Driftless",
+      title: "Why Retail Investors Are Suddenly Beating the Market",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. illo, amet eum inventore explicabo odio deserunt accusantium suscipit aliquam provident numquam culpa quae voluptatibus officia! Optio!",
+        "From fractional investing to AI-powered advisory tools, everyday investors are gaining an unexpected edge. This shift is reshaping traditional market dynamics—and quietly worrying institutions.",
       image: article2,
       field: "Finance"
     },
     {
       id: 3,
-      title: "The Driftless",
+      title:  "Rise of Preventive Tech in Healthcare",
       description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo magnam recusandae earum quia aperiam illum illo, amet eum inventore explicabo odio deserunt accusantium suscipit Optio!",
+      "Wearables and AI diagnostics are moving healthcare from treatment to prediction. Here’s how proactive analytics is helping clinicians detect diseases months before symptoms appear.",
       image: article3,
       field: "Healthcare"
     }
@@ -55,11 +53,11 @@ const NewsletterCard = () => {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 text-white p-6">
-              <button className="bg-black/30 px-3 py-1 text-xs mb-1 rounded-2xl border">
+              <button className="bg-[#00A8C5]lack/30 px-3 py-1 text-xs mb-1 rounded-2xl border">
                 {card.field}
               </button>
 
-              <h1 className="text-3xl font-semibold mb-4 underline">
+              <h1 className="text-2xl font-semibold mb-4 underline">
                 {card.title}
               </h1>
 

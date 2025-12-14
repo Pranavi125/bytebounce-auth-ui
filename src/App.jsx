@@ -5,6 +5,8 @@ import JoinUs from './components/JoinUs'
 import NewsletterCard from './components/NewsletterCard'
 import Subscribe from './components/Subscribe'
 import WhyUs from './components/WhyUs'
+import WhyUsnew from './components/WhyUsnew'
+import Suceed from './components/Succeed'
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,15 +15,12 @@ import Reviews from './components/Reviews';
 
 
 import SubscribePage from './pages/SubscribePage';
+import ContactUsPage from "./pages/ContactUsPage";
 
 
 function App() {
   return (
     <BrowserRouter>
-      
-
-   
-
 
       <Routes>
         {/* Home Page */}
@@ -29,25 +28,28 @@ function App() {
           path="/"
           element={
             <>
+            <div className="min-h-screen">
             <Navbar />
-              <Hero />
-              <NewsletterCard />
+              <Hero id="Home"/>
+              <Suceed />
               <JoinUs />
-              <LatestNews />
+              <NewsletterCard id="newsletter"/> 
               <Reviews />
               
-              <WhyUs/>
+              <WhyUsnew id="about"/>
               <Subscribe />
-   <Footer/>
+            <Footer/>
+            </div>
             </>
           }
         />
 
         {/* Subscribe Page */}
         <Route path="/subscribe" element={<SubscribePage />} />
+
+      <Route path="/contactus" element={<ContactUsPage />} />
       </Routes>
 
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
