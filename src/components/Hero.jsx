@@ -147,19 +147,19 @@ export default function MainHero() {
             {/* Heading */}
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
               Launch Your Career With{" "}
-              <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#96E6A1] bg-clip-text text-transparent">
-                Bytebounce
+              <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+                ByteBounce
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10">
-              The #1 platform for students and fresh graduates to learn,
-              discover{" "}
+             One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
               <span className="text-[#1F2A36] font-medium">jobs</span>,
               <span className="text-[#1F2A36] font-medium"> scholarships</span>,
               and
               <span className="text-[#1F2A36] font-medium"> internships</span>.
+              and tech <br></br> <span className="scroll-m-0">No noise. No spam. Just one powerful newsletter  to level up your career.</span>
             </p>
 
             {/* CTA BUTTON — opens modal */}
@@ -169,7 +169,7 @@ export default function MainHero() {
                 onClick={() => setOpenModal(true)}
               >
                 <Zap className="mr-2 w-5 h-5" />
-                Get Started
+               Subscribe Us
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

@@ -43,7 +43,7 @@ const SuccessSection = () => {
         <div className="text-center mb-20">
           <h1 className="text-5xl font-black text-[#0F273D] mb-4">
             Everything You Need to{" "}
-            <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#96E6A1] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
               Succeed
             </span>
           </h1>
