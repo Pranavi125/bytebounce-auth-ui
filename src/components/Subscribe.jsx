@@ -9,7 +9,7 @@ const Subscribe = () => {
     if (!email) return;
 
     // Redirect to Substack with prefilled email
-    window.location.href = `https://pandeyk.substack.com/subscribe?email=${encodeURIComponent(
+    window.location.href = `https://bytebounce.substack.com/subscribe?email=${encodeURIComponent(
       email
     )}`;
   };
