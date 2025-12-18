@@ -3,6 +3,7 @@ import article1 from "../assets/image/article1.jpg";
 import article2 from "../assets/image/article2.jpg";
 import article3 from "../assets/image/article3.jpg";
 import { ChevronLeft } from "lucide-react";
+import { useEffect } from "react";
 
 const articles = {
   1: {
@@ -64,10 +65,14 @@ const NewsletterDetail = () => {
   const navigate = useNavigate();
   const article = articles[id];
 
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!article) return <p className="p-10">Article not found.</p>;
 
   return (
-    <main className="px-6 sm:px-10 lg:px-32 pt-28 pb-20 bg-gray-50">
+    <main className="px-6 sm:px-10 lg:px-32 pt-20 pb-20 bg-gray-50">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm p-8 sm:p-12">
 
         {/* Back button */}

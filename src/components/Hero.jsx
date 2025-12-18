@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import {
   ArrowRight, Briefcase, Award, Sparkles,
-  GraduationCap, Rocket, Zap, Target, Globe, BookOpen
+  GraduationCap, Rocket, Zap, Target, Globe, BookOpen, Users, Clock, Mail
 } from "lucide-react";
+import StatsSection from "./stats";
 
 /* ------------------------- CUSTOM BUTTON ------------------------------ */
 function Button({ children, variant = "default", className = "", ...props }) {
@@ -21,8 +22,33 @@ function Button({ children, variant = "default", className = "", ...props }) {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function MainHero() {
   const [openModal, setOpenModal] = useState(false);
+
+
+
+
+
 
   return (
     <>
@@ -80,7 +106,7 @@ export default function MainHero() {
         />
 
         {/* Floating Icons */}
-        <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none opacity-[0.8]">
 
           <style>
             {`
@@ -154,34 +180,185 @@ export default function MainHero() {
             {/* Heading */}
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
               Launch Your Career With{" "}
-              <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+              <span className="text-5xl bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
                 ByteBounce
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10">
-             One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
+            {/* <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10"> */}
+              {/* Stop guessing your next career move.
+ByteBounce brings you verified internships, global scholarships, study-abroad opportunities, in-demand skills, AI productivity tools, and real business insights — every week, in 5 minutes.
+No noise. No spam. Just opportunities that matter.
+One newsletter. Endless opportunities. */}
+
+             {/* One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
               <span className="text-[#1F2A36] font-medium">jobs</span>,
               <span className="text-[#1F2A36] font-medium"> scholarships</span>,
               and
               <span className="text-[#1F2A36] font-medium"> internships</span>.
               and tech <br></br> <span className="scroll-m-0">No noise. No spam. Just one powerful newsletter  to level up your career.</span>
-            </p>
+             */}
+            
+            
+            
+            {/* </p> */}
+
+            <p className="max-w-2xl text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10 leading-relaxed">
+  Stop guessing your next career move.
+  <br />
+  <span className="mt-2 block">
+    ByteBounce delivers verified internships, global scholarships, study-abroad
+    opportunities, in-demand skills, AI tools, and real business insights
+    {/* <span className="text-[#1F2A36] font-medium block"> every week, in just 5 minutes.</span> */}
+  </span>
+
+  {/* <span className="mt-3 block text-sm">
+    no noise. no spam. Just opportunities that matter.
+  </span> */}
+
+  {/* <span className=" text-sm  text-[#1F2A36] ">
+    One newsletter. Endless opportunities.
+  </span> */}
+</p>
+{/* <StatsSection/> */}
+
 
             {/* CTA BUTTON — opens modal */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
+              {/* <Button
                 className="px-8 py-6 text-base group"
                 onClick={() => setOpenModal(true)}
               >
                 <Zap className="mr-2 w-5 h-5" />
-               Subscribe Us
+               Join the free newslette
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </Button> */}
+              <button className=" px-8 py-4 rounded-full 
+bg-teal-600 hover:bg-teal-700 
+text-white text-lg font-semibold 
+shadow-lg hover:shadow-xl 
+transition-all duration-300">
+⚡ Join the free newsletter →
+</button>
+
+
             </div>
+            <span className="mt-3 block text-sm">
+    no noise. no spam. Just opportunities that matter.
+  </span>
 
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {/* stats */}
+         
+<StatsSection/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
       </section>

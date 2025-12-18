@@ -2,7 +2,7 @@ import { BarChart, Star, TrendingUp, Gift } from "lucide-react";
 
 const WhyUs = () => {
   return (
-    <main className='bg-[#00A8C5] min-h-screen mx-auto p-4 md:p-16'>
+    <main id="about" className='bg-[#00A8C5] min-h-screen mx-auto p-4 md:p-16'>
       <div className='flex flex-col max-w-5xl justify-center gap-4 md:gap-0 items-center min-h-screen mx-auto'>
         
         <h1 className='text-white text-4xl md:text-5xl font-bold mb-8 md:mb-12 underline'>
