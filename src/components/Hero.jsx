@@ -160,19 +160,19 @@ export default function MainHero() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10">
-             One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
+            <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mt-6 mx-auto mb-10">
+             One newsletter. Endless opportunities.<br/> We bring you a weekly newsletter packed with handpicked  {" "}
               <span className="text-[#1F2A36] font-medium">jobs</span>,
               <span className="text-[#1F2A36] font-medium"> scholarships</span>,
               and
               <span className="text-[#1F2A36] font-medium"> internships</span>.
-              and tech <br></br> <span className="scroll-m-0">No noise. No spam. Just one powerful newsletter  to level up your career.</span>
+              and tech <br></br> <span className="scroll-m-0"><span className="font-semibold text-black">No noise. No spam.</span> Just one powerful newsletter  to level up your career.</span>
             </p>
 
             {/* CTA BUTTON — opens modal */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                className="px-8 py-6 text-base group"
+                className="px-8 py-4 text-base group"
                 onClick={() => setOpenModal(true)}
               >
                 <Zap className="mr-2 w-5 h-5" />
