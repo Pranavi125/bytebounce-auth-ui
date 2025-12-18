@@ -75,14 +75,14 @@ export default function Navbar() {
 
       {/* ---------------- NAVBAR ---------------- */}
       <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 p-1 flex justify-between items-center">
           
           {/* Logo */}
           <div
-            className="text-2xl font-semibold cursor-pointer"
+            className="font-semibold cursor-pointer"
             onClick={() => navigate("/")}
           >
-            ByteBounce
+            <img src="/bytebounce.png" alt="ByteBounce" className="h-18" />
           </div>
 
           {/* Desktop Menu */}

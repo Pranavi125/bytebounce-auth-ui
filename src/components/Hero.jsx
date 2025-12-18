@@ -76,13 +76,7 @@ export default function MainHero() {
               frameBorder="0"
               scrolling="no"
             ></iframe>
-            {/* <iframe 
-            src="https://bytebounce.substack.com/embed" 
-            width="480" 
-            height="320" 
-            style="border:1px solid #EEE; background:white;" 
-            frameborder="0" 
-            scrolling="no"></iframe> */}
+         
           </div>
         </div>
       )}
@@ -186,6 +180,7 @@ export default function MainHero() {
             </h1>
 
             {/* Subtitle */}
+
             {/* <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10"> */}
               {/* Stop guessing your next career move.
 ByteBounce brings you verified internships, global scholarships, study-abroad opportunities, in-demand skills, AI productivity tools, and real business insights — every week, in 5 minutes.
@@ -193,10 +188,12 @@ No noise. No spam. Just opportunities that matter.
 One newsletter. Endless opportunities. */}
 
              {/* One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
+
               <span className="text-[#1F2A36] font-medium">jobs</span>,
               <span className="text-[#1F2A36] font-medium"> scholarships</span>,
               and
               <span className="text-[#1F2A36] font-medium"> internships</span>.
+<<<<<<< HEAD
               and tech <br></br> <span className="scroll-m-0">No noise. No spam. Just one powerful newsletter  to level up your career.</span>
              */}
             
@@ -226,14 +223,7 @@ One newsletter. Endless opportunities. */}
 
             {/* CTA BUTTON — opens modal */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* <Button
-                className="px-8 py-6 text-base group"
-                onClick={() => setOpenModal(true)}
-              >
-                <Zap className="mr-2 w-5 h-5" />
-               Join the free newslette
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button> */}
+             
               <button className=" px-8 py-4 rounded-full 
 bg-teal-600 hover:bg-teal-700 
 text-white text-lg font-semibold 

@@ -1,9 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import article1 from "../assets/image/article1.jpg";
 import article2 from "../assets/image/article2.jpg";
 import article3 from "../assets/image/article3.jpg";
 import { ChevronLeft } from "lucide-react";
-import { useEffect } from "react";
+
 
 const articles = {
   1: {
@@ -65,27 +66,30 @@ const NewsletterDetail = () => {
   const navigate = useNavigate();
   const article = articles[id];
 
-   useEffect(() => {
-    window.scrollTo(0, 0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+
   }, []);
 
   if (!article) return <p className="p-10">Article not found.</p>;
 
   return (
-    <main className="px-6 sm:px-10 lg:px-32 pt-20 pb-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm p-8 sm:p-12">
+
+    <main className="px-6 sm:px-8 lg:px-32 pt-20 pb-20 bg-gray-50">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm p-4 sm:p-10">
+
 
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
           className="text-sm text-white bg-black p-1 hover:bg-transparent rounded-full hover:text-gray-800 mb-6 flex items-center gap-1"
         >
-          <ChevronLeft className="text-white hover:text-black p-.5" size={20} />
+          <ChevronLeft size={20} />
         </button>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-4 leading-tight 
-          bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl sm:text-4xl font-semibold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
           {article.title}
         </h1>
 

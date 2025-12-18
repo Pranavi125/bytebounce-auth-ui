@@ -22,14 +22,13 @@ const Footer = () => {
             </h2>
 
             <iframe
-              src="https://bytebounce.substack.com/embed"
+              src="https://khushhipandey.substack.com/embed"
               width="100%"
               height="200"
               style={{ border: "1px solid #EEE", background: "white" }}
               frameBorder="0"
               scrolling="no"
             ></iframe>
-            {/* <iframe src="https://bytebounce.substack.com/embed" width="100" height="200" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe> */}
           </div>
         </div>
       )}
@@ -51,9 +50,15 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-3 py-6 flex-wrap mt-16">
-              <Facebook className="fill-white hover:bg-gray-700 h-9 w-9 p-2 border border-white/50 rounded-full cursor-pointer" />
-              <Twitter className="fill-white hover:bg-gray-700 h-9 w-9 p-2 border border-white/50 rounded-full cursor-pointer" />
-              <Wifi className="hover:bg-gray-700 h-9 w-9 p-2 border border-white/50 rounded-full cursor-pointer" />
+              <p className="h-10 w-10 flex justify-center items-center cursor-pointer text-white border border-white/50 rounded-full" src="/substack.svg" alt="Substack" >
+                <svg role="img" viewBox="-2 -2 14 14" xmlns="http://www.w3.org/2000/svg" id="Substack--Streamline-Simple-Icons" height="18" width="18">
+  <desc>
+    Substack Streamline Icon: https://streamlinehq.com
+  </desc>
+  <title>Substack</title>
+  <path d="M9.391250000000001 3.434166666666667H0.6083333333333334V2.2525h8.783333333333333v1.1816666666666666zM0.6083333333333334 4.505V10L5 7.545833333333333 9.391666666666667 10V4.505H0.6083333333333334zM9.391666666666667 0H0.6083333333333334v1.1816666666666666h8.783333333333333V0z" fill="#ffffff" stroke-width="0.4167"></path>
+</svg>
+              </p>
               <MailPlus className="hover:bg-gray-700 h-9 w-9 p-2 border border-white/50 rounded-full cursor-pointer" />
               <Linkedin className="fill-white hover:bg-gray-700 h-9 w-9 p-2 border border-white/50 rounded-full cursor-pointer" />
             </div>
@@ -95,9 +100,11 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center justify-center gap-3 flex-wrap mt-8">
-              <Facebook className="fill-white hover:bg-gray-700 h-8 w-8 p-2 border border-white/50 rounded-full cursor-pointer" />
-              <Twitter className="fill-white hover:bg-gray-700 h-8 w-8 p-2 border border-white/50 rounded-full cursor-pointer" />
-              <Wifi className="hover:bg-gray-700 h-8 w-8 p-2 border border-white/50 rounded-full cursor-pointer" />
+              <p className="h-8 w-8 flex justify-center items-center cursor-pointer text-white border border-white/50 rounded-full" src="/substack.svg" alt="Substack" >
+                <svg role="img" viewBox="-2 -2 12 12" xmlns="http://www.w3.org/2000/svg" id="Substack--Streamline-Simple-Icons" height="14" width="14">
+               <path d="M7.513 2.7473333333333336H0.48666666666666664V1.8019999999999998h7.0266666666666655v0.9453333333333332zM0.48666666666666664 3.6039999999999996V8L4 6.036666666666666 7.513333333333333 8V3.6039999999999996H0.48666666666666664zM7.513333333333333 0H0.48666666666666664v0.9453333333333332h7.0266666666666655V0z" fill="#ffffff" stroke-width="0.3333"></path>
+               </svg>
+              </p>
               <MailPlus className="hover:bg-gray-700 h-8 w-8 p-2 border border-white/50 rounded-full cursor-pointer" />
               <Linkedin className="fill-white hover:bg-gray-700 h-8 w-8 p-2 border border-white/50 rounded-full cursor-pointer" />
             </div>
