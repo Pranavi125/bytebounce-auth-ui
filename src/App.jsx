@@ -32,11 +32,10 @@ function App() {
             <Navbar />
               <Hero id="Home"/>
               <Suceed />
-              <JoinUs />
               <NewsletterCard id="newsletter"/> 
               <Reviews />
               
-              <WhyUsnew id="about"/>
+              <WhyUs />
               <Subscribe />
             <Footer/>
             </div>

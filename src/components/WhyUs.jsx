@@ -19,25 +19,6 @@ const WhyUs = () => {
               curated by experts who understand your goals. 
             </p>
 
-            {/* STATS */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-[#0077b6]enter">
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">10,000+</p>
-                <p className="text-gray-600 text-sm">Active Subscribers</p>
-              </div>
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">50+</p>
-                <p className="text-gray-600 text-sm">Countries Reached</p>
-              </div>
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">95%</p>
-                <p className="text-gray-600 text-sm">Open Rate</p>
-              </div>
-              <div>
-                <p className="text-[#00A8C5]lue-600 font-bold text-lg md:text-xl">200+</p>
-                <p className="text-gray-600 text-sm">Universities</p>
-              </div>
-            </div>
           </div>
 
           {/* RIGHT BLUE TEXT LIST */}
