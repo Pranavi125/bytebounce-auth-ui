@@ -45,7 +45,16 @@ function Button({ children, variant = "default", className = "", ...props }) {
 export default function MainHero() {
   const [openModal, setOpenModal] = useState(false);
 
+const [email, setEmail] = useState("");
 
+const handleSubscribe = (e) => {
+  e.preventDefault();
+  if (!email) return;
+
+  window.location.href = `https://bytebounce.substack.com/subscribe?email=${encodeURIComponent(
+    email
+  )}`;
+};
 
 
 
@@ -75,6 +84,8 @@ export default function MainHero() {
               style={{ border: "1px solid #EEE", background: "white" }}
               frameBorder="0"
               scrolling="no"
+              sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+
             ></iframe>
          
           </div>
@@ -222,9 +233,9 @@ One newsletter. Endless opportunities. */}
 
 
             {/* CTA BUTTON — opens modal */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
              
-              <button className=" px-8 py-4 rounded-full 
+              <button onClick={() => setOpenModal(true)}  className=" px-8 py-4 rounded-full 
 bg-teal-600 hover:bg-teal-700 
 text-white text-lg font-semibold 
 shadow-lg hover:shadow-xl 
@@ -233,7 +244,49 @@ transition-all duration-300">
 </button>
 
 
-            </div>
+            </div> */}
+<form
+  onSubmit={handleSubscribe}
+  className="relative w-full max-w-md mx-auto"
+>
+  <input
+    type="email"
+    required
+    placeholder="Your email address"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    className="w-full border border-gray-300 rounded-full 
+               px-5 py-3.5 pr-36 
+               text-sm sm:text-base 
+               outline-none focus:ring-2 focus:ring-[#0D868C]/30"
+  />
+
+  <button
+    type="submit"
+    className="absolute right-0 top-1/2 -translate-y-1/2
+               bg-[#0D868C] hover:bg-[#0A6266] 
+               text-white font-semibold 
+               px-9 py-3.5 
+               rounded-full 
+               text-sm sm:text-base
+               transition-all"
+  >
+    Subscribe
+  </button>
+
+  
+</form>
+
+
+
+
+
+
+
+
+
+
+
             <span className="mt-3 block text-sm">
     no noise. no spam. Just opportunities that matter.
   </span>
