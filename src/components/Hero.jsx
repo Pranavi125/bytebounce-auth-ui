@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import {
   ArrowRight, Briefcase, Award, Sparkles,
-  GraduationCap, Rocket, Zap, Target, Globe, BookOpen
+  GraduationCap, Rocket, Zap, Target, Globe, BookOpen, Users, Clock, Mail
 } from "lucide-react";
+import StatsSection from "./stats";
 
 /* ------------------------- CUSTOM BUTTON ------------------------------ */
 function Button({ children, variant = "default", className = "", ...props }) {
@@ -21,8 +22,33 @@ function Button({ children, variant = "default", className = "", ...props }) {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function MainHero() {
   const [openModal, setOpenModal] = useState(false);
+
+
+
+
+
 
   return (
     <>
@@ -43,13 +69,14 @@ export default function MainHero() {
             </h2>
 
             <iframe
-              src="https://khushhipandey.substack.com/embed"
+              src="https://bytebounce.substack.com/embed"
               width="100%"
               height="200"
               style={{ border: "1px solid #EEE", background: "white" }}
               frameBorder="0"
               scrolling="no"
             ></iframe>
+         
           </div>
         </div>
       )}
@@ -73,7 +100,7 @@ export default function MainHero() {
         />
 
         {/* Floating Icons */}
-        <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none opacity-[0.8]">
 
           <style>
             {`
@@ -96,27 +123,21 @@ export default function MainHero() {
             <Briefcase className="w-5 h-5 text-[#0D868C99]" />
           </div>
 
-          <div className="absolute top-[20%] right-[4%] md:right-[12%] w-9 h-9 rounded-lg bg-[#F76E4F33] flex items-center justify-center animate-float-slow">
+          {/* <div className="absolute top-[20%] right-[4%] md:right-[12%] w-9 h-9 rounded-lg bg-[#F76E4F33] flex items-center justify-center animate-float-slow">
             <Award className="w-4 h-4 text-[#F76E4FB2]" />
-          </div>
+          </div> */}
 
-          <div className="absolute top-[42%] left-[3%] md:left-[8%] w-11 h-11 rounded-xl bg-[#0D868C1A] flex items-center justify-center animate-float">
+          {/* <div className="absolute top-[25%] left-[3%] md:left-[8%] w-11 h-11 rounded-xl bg-[#0D868C1A] flex items-center justify-center animate-float">
             <GraduationCap className="w-6 h-6 text-[#0D868C80]" />
-          </div>
+          </div> */}
 
-          <div className="absolute top-[25%] right-[8%] md:right-[25%] w-8 h-8 rounded-lg bg-[#F76E4F26] flex items-center justify-center animate-float-slow">
+          {/* <div className="absolute top-[25%] right-[8%] md:right-[25%] w-8 h-8 rounded-lg bg-[#F76E4F26] flex items-center justify-center animate-float-slow">
             <Rocket className="w-4 h-4 text-[#F76E4F99]" />
-          </div>
+          </div> */}
 
-          <div className="absolute bottom-[32%] left-[8%] md:left-[18%] w-8 h-8 rounded-lg bg-[#0D868C33] flex items-center justify-center animate-float">
-            <Target className="w-4 h-4 text-[#0D868CB2]" />
-          </div>
+         
 
-          <div className="absolute top-[34%] right-[4%] md:right-[12%] w-10 h-10 rounded-xl bg-[#F76E4F1A] flex items-center justify-center animate-float-slow">
-            <Globe className="w-5 h-5 text-[#F76E4F80]" />
-          </div>
-
-          <div className="absolute bottom-[42%] right-[8%] md:right-[18%] w-9 h-9 rounded-lg bg-[#0D868C26] flex items-center justify-center animate-float">
+          <div className="absolute bottom-[8%] right-[8%] md:right-[18%] w-9 h-9 rounded-lg bg-[#0D868C26] flex items-center justify-center animate-float">
             <BookOpen className="w-4 h-4 text-[#0D868C99]" />
           </div>
 
@@ -126,6 +147,15 @@ export default function MainHero() {
 
           <div className="absolute top-[10%] left-[65%] md:left-[35%] w-8 h-8 rounded-lg bg-[#0D868C1A] flex items-center justify-center animate-float">
             <Zap className="w-4 h-4 text-[#0D868C80]" />
+          </div>
+
+           {/* <div className="absolute top-[34%] right-[4%] md:right-[12%] w-10 h-10 rounded-xl bg-[#F76E4F1A] flex items-center justify-center animate-float-slow">
+            <Globe className="w-5 h-5 text-[#F76E4F80]" />
+          </div> */}
+
+
+          <div className="absolute bottom-[20%] right-[30%] md:left-[18%] w-8 h-8 rounded-lg bg-[#0D868C33] flex items-center justify-center animate-float">
+            <Target className="w-4 h-4 text-[#0D868CB2]" />
           </div>
         </div>
 
@@ -147,34 +177,184 @@ export default function MainHero() {
             {/* Heading */}
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
               Launch Your Career With{" "}
-              <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+              <span className="text-5xl bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
                 ByteBounce
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10">
-             One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
+
+            {/* <p className="text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10"> */}
+              {/* Stop guessing your next career move.
+ByteBounce brings you verified internships, global scholarships, study-abroad opportunities, in-demand skills, AI productivity tools, and real business insights — every week, in 5 minutes.
+No noise. No spam. Just opportunities that matter.
+One newsletter. Endless opportunities. */}
+
+             {/* One newsletter. Endless opportunities. We bring you a weekly newsletter packed with handpicked  {" "}
+
               <span className="text-[#1F2A36] font-medium">jobs</span>,
               <span className="text-[#1F2A36] font-medium"> scholarships</span>,
               and
               <span className="text-[#1F2A36] font-medium"> internships</span>.
+<<<<<<< HEAD
               and tech <br></br> <span className="scroll-m-0">No noise. No spam. Just one powerful newsletter  to level up your career.</span>
-            </p>
+             */}
+            
+            
+            
+            {/* </p> */}
+
+            <p className="max-w-2xl text-lg py-6 sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-8 leading-relaxed">
+  <span className="text-xl font-semibold">Stop guessing your next career move.</span>
+  <br />
+  {/* <span className="mt-6 block"
+    ByteBounce delivers verified <span className="text-black font-bold">internships</span>, global <span className="text-black font-bold">scholarships</span>, study-abroad
+    <span className="text-black font-bold"> opportunities </span>, in-demand skills, AI tools, and real business insights
+    {/* <span className="text-[#1F2A36] font-medium block"> every week, in just 5 minutes.</span> */}
+
+  <span className="mt-6 block">
+    ByteBounce brings you verified <span className="text-black font-semibold">internships</span>, global <span className="text-black font-semibold">scholarships</span>, in-demand skills, <span className="text-black font-semibold">AI</span> productivity tools, and <span className="text-black font-semibold">business insights</span>.
+  </span>
+
+  {/* <span className="mt-3 block text-sm">
+    no noise. no spam. Just opportunities that matter.
+  </span> */}
+
+  {/* <span className=" text-sm  text-[#1F2A36] ">
+    One newsletter. Endless opportunities.
+  </span> */}
+</p>
+{/* <StatsSection/> */}
+
 
             {/* CTA BUTTON — opens modal */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                className="px-8 py-6 text-base group"
-                onClick={() => setOpenModal(true)}
-              >
-                <Zap className="mr-2 w-5 h-5" />
-               Subscribe Us
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <div className="flex sm:flex-row gap-4 justify-center">
+             
+              <button className="px-6 py-4 rounded-full 
+bg-teal-600 hover:bg-teal-700 
+text-white text-xl font-semibold 
+shadow-lg hover:shadow-xl 
+transition-all duration-300">
+Join the free newsletter →
+</button>
+
+
             </div>
+            <span className="mt-3 block text-sm">
+    No Noise. No Spam. Unsubscribe Anytime.
+  </span>
 
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {/* stats */}
+         
+<StatsSection/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
       </section>
