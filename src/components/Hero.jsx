@@ -45,6 +45,7 @@ function Button({ children, variant = "default", className = "", ...props }) {
 export default function MainHero() {
   const [openModal, setOpenModal] = useState(false);
 
+
 const [email, setEmail] = useState("");
 
 const handleSubscribe = (e) => {
@@ -55,6 +56,7 @@ const handleSubscribe = (e) => {
     email
   )}`;
 };
+
 
 
 
@@ -134,27 +136,21 @@ const handleSubscribe = (e) => {
             <Briefcase className="w-5 h-5 text-[#0D868C99]" />
           </div>
 
-          <div className="absolute top-[20%] right-[4%] md:right-[12%] w-9 h-9 rounded-lg bg-[#F76E4F33] flex items-center justify-center animate-float-slow">
+          {/* <div className="absolute top-[20%] right-[4%] md:right-[12%] w-9 h-9 rounded-lg bg-[#F76E4F33] flex items-center justify-center animate-float-slow">
             <Award className="w-4 h-4 text-[#F76E4FB2]" />
-          </div>
+          </div> */}
 
-          <div className="absolute top-[42%] left-[3%] md:left-[8%] w-11 h-11 rounded-xl bg-[#0D868C1A] flex items-center justify-center animate-float">
+          {/* <div className="absolute top-[25%] left-[3%] md:left-[8%] w-11 h-11 rounded-xl bg-[#0D868C1A] flex items-center justify-center animate-float">
             <GraduationCap className="w-6 h-6 text-[#0D868C80]" />
-          </div>
+          </div> */}
 
-          <div className="absolute top-[25%] right-[8%] md:right-[25%] w-8 h-8 rounded-lg bg-[#F76E4F26] flex items-center justify-center animate-float-slow">
+          <div className="absolute top-[50%] right-[2%] md:right-[25%] w-8 h-8 rounded-lg bg-[#F76E4F26] flex items-center justify-center animate-float-slow opacity-20">
             <Rocket className="w-4 h-4 text-[#F76E4F99]" />
           </div>
 
-          <div className="absolute bottom-[32%] left-[8%] md:left-[18%] w-8 h-8 rounded-lg bg-[#0D868C33] flex items-center justify-center animate-float">
-            <Target className="w-4 h-4 text-[#0D868CB2]" />
-          </div>
+         
 
-          <div className="absolute top-[34%] right-[4%] md:right-[12%] w-10 h-10 rounded-xl bg-[#F76E4F1A] flex items-center justify-center animate-float-slow">
-            <Globe className="w-5 h-5 text-[#F76E4F80]" />
-          </div>
-
-          <div className="absolute bottom-[42%] right-[8%] md:right-[18%] w-9 h-9 rounded-lg bg-[#0D868C26] flex items-center justify-center animate-float">
+          <div className="absolute bottom-[8%] right-[8%] md:right-[18%] w-9 h-9 rounded-lg bg-[#0D868C26] flex items-center justify-center animate-float">
             <BookOpen className="w-4 h-4 text-[#0D868C99]" />
           </div>
 
@@ -162,8 +158,17 @@ const handleSubscribe = (e) => {
             <Sparkles className="w-4 h-4 text-[#F76E4FB2]" />
           </div>
 
-          <div className="absolute top-[10%] left-[65%] md:left-[35%] w-8 h-8 rounded-lg bg-[#0D868C1A] flex items-center justify-center animate-float">
+          <div className="absolute top-[10%] left-[60%] md:left-[35%] w-8 h-8 rounded-lg bg-[#0D868C1A] flex items-center justify-center animate-float">
             <Zap className="w-4 h-4 text-[#0D868C80]" />
+          </div>
+
+           <div className="absolute top-[15%] right-[4%] md:right-[12%] w-10 h-10 rounded-xl bg-[#F76E4F1A] flex items-center justify-center animate-float-slow opacity-70">
+            <Globe className="w-5 h-5 text-[#F76E4F80]" />
+          </div>
+
+
+          <div className="absolute bottom-[20%] right-[30%] md:left-[18%] w-8 h-8 rounded-lg bg-[#0D868C33] flex items-center justify-center animate-float">
+            <Target className="w-4 h-4 text-[#0D868CB2]" />
           </div>
         </div>
 
@@ -212,13 +217,18 @@ One newsletter. Endless opportunities. */}
             
             {/* </p> */}
 
-            <p className="max-w-2xl text-lg sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-10 leading-relaxed">
-  Stop guessing your next career move.
+
+            <p className="max-w-2xl text-lg py-6 sm:text-xl text-[#6D7B86] max-w-2xl mx-auto mb-8 leading-relaxed">
+  <span className="text-xl font-semibold">Stop guessing your next career move.</span>
   <br />
-  <span className="mt-2 block">
-    ByteBounce delivers verified internships, global scholarships, study-abroad
-    opportunities, in-demand skills, AI tools, and real business insights
+  {/* <span className="mt-6 block"
+    ByteBounce delivers verified <span className="text-black font-bold">internships</span>, global <span className="text-black font-bold">scholarships</span>, study-abroad
+    <span className="text-black font-bold"> opportunities </span>, in-demand skills, AI tools, and real business insights
     {/* <span className="text-[#1F2A36] font-medium block"> every week, in just 5 minutes.</span> */}
+
+  <span className="mt-6 block">
+    ByteBounce brings you verified <span className="text-black font-semibold">internships</span>, global <span className="text-black font-semibold">scholarships</span>, in-demand skills, <span className="text-black font-semibold">AI</span> productivity tools, and <span className="text-black font-semibold">business insights</span>.
+
   </span>
 
   {/* <span className="mt-3 block text-sm">
@@ -233,6 +243,7 @@ One newsletter. Endless opportunities. */}
 
 
             {/* CTA BUTTON — opens modal */}
+
             {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
              
               <button onClick={() => setOpenModal(true)}  className=" px-8 py-4 rounded-full 
@@ -247,35 +258,44 @@ transition-all duration-300">
             </div> */}
 <form
   onSubmit={handleSubscribe}
-  className="relative w-full max-w-md mx-auto"
+  className="w-full max-w-md mx-auto px-5"
 >
-  <input
-    type="email"
-    required
-    placeholder="Your email address"
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-    className="w-full border border-gray-300 rounded-full 
-               px-5 py-3.5 pr-36 
-               text-sm sm:text-base 
-               outline-none focus:ring-2 focus:ring-[#0D868C]/30"
-  />
-
-  <button
-    type="submit"
-    className="absolute right-0 top-1/2 -translate-y-1/2
-               bg-[#0D868C] hover:bg-[#0A6266] 
-               text-white font-semibold 
-               px-9 py-3.5 
-               rounded-full 
-               text-sm sm:text-base
-               transition-all"
+  <div
+    className="flex items-center h-14
+               bg-gray-100 border-2 border-[#BFDCDD]
+               rounded-full overflow-hidden
+               focus-within:border-[#91b8ba]"
   >
-    Subscribe
-  </button>
+    <input
+      type="email"
+      required
+      placeholder="Your email address"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      className="flex-1 h-full bg-transparent
+                 px-6
+                 text-sm sm:text-base
+                 text-gray-700 placeholder-gray-400
+                 outline-none"
+    />
 
-  
+    <button
+      type="submit"
+      className="h-full mr-0
+                 bg-[#0D868C] hover:bg-[#0A6266]
+                 text-white font-semibold
+                 px-8
+                 rounded-full
+                 text-sm sm:text-base
+                 transition-all"
+    >
+      Subscribe
+    </button>
+  </div>
 </form>
+
+
+
 
 
 
@@ -289,6 +309,7 @@ transition-all duration-300">
 
             <span className="mt-3 block text-sm">
     no noise. no spam. Just opportunities that matter.
+
   </span>
 
           </div>

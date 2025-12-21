@@ -28,7 +28,7 @@ const Subscribe = () => {
 
         <p className="text-base sm:text-lg my-6">
           Join a growing community of more than{" "}
-          <span className="font-bold">330,000 friendly readers</span>.
+          <span className="font-bold">1200+ friendly readers</span>.
         </p>
 
         <div className="flex gap-1">

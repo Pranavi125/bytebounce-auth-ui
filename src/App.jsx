@@ -27,9 +27,11 @@ function App() {
               <Navbar />
               <Hero id="Home" />
               <Suceed />
+
               {/* <JoinUs /> */}
               <NewsletterCard id="newsletter" />
               <Reviews />
+
               <WhyUs />
               <Subscribe />
               <Footer />
