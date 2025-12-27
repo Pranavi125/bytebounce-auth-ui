@@ -147,9 +147,10 @@ export default function MainHero() {
             {/* Heading */}
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
               Launch Your Career With{" "}
-              <span className="text-5xl bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
-                ByteBounce
-              </span>
+             <span className="text-5xl break-words bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+  ByteBounce
+</span>
+
             </h1>
 
             {/* Subtitle */}
