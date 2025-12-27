@@ -133,68 +133,73 @@ export default function MainHero() {
         </div>
 
         {/* Main Content */}
-        <div className="container mx-auto px-4 flex-1 flex flex-col justify-center">
-          {/* ✅ ONLY FIX: safe horizontal padding for mobile */}
-          <div className="max-w-4xl mx-auto text-center mb-12 px-3 sm:px-0">
+        <div className="flex-1 flex justify-center">
+  <div className="container mx-auto px-4 flex flex-col justify-center">
 
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-[#0D868C0D] border border-[#0D868C33] rounded-full">
-              <span className="text-sm font-medium text-[#0D868C]">
-                new opportunities every week
-              </span>
-            </div>
+    <div className="max-w-4xl mx-auto text-center mb-12 px-3 sm:px-0">
 
-            {/* Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-              Launch Your Career With{" "}
-             <span className="text-5xl break-words bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
-  ByteBounce
-</span>
+      {/* Badge */}
+      <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-[#0D868C0D] border border-[#0D868C33] rounded-full">
+        <div className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0D868C] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D868C]"></span>
+        </div>
+        <span className="text-sm font-medium text-[#0D868C]">
+          new opportunities every week
+        </span>
+      </div>
 
-            </h1>
+      {/* Heading */}
+      <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+        Launch Your Career With{" "}
+        <span className="text-5xl bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+          ByteBounce
+        </span>
+      </h1>
 
-            {/* Subtitle */}
-            <p className="max-w-2xl text-lg py-6 sm:text-xl text-[#6D7B86] mx-auto mb-8 leading-relaxed">
-              <span className="text-xl font-semibold">
-                Stop guessing your next career move.
-              </span>
-              <br />
-              <span className="mt-6 block">
-                ByteBounce brings you verified{" "}
-                <span className="text-black font-semibold">internships</span>, global{" "}
-                <span className="text-black font-semibold">scholarships</span>, in-demand skills,{" "}
-                <span className="text-black font-semibold">AI</span> productivity tools, and{" "}
-                <span className="text-black font-semibold">business insights</span>.
-              </span>
-            </p>
+      {/* Subtitle */}
+      <p className="max-w-2xl text-lg py-6 sm:text-xl text-[#6D7B86] mx-auto mb-8 leading-relaxed">
+        <span className="text-xl font-semibold">
+          Stop guessing your next career move.
+        </span>
+        <br />
+        <span className="mt-6 block">
+          ByteBounce brings you verified{" "}
+          <span className="text-black font-semibold">internships</span>, global{" "}
+          <span className="text-black font-semibold">scholarships</span>, in-demand skills,{" "}
+          <span className="text-black font-semibold">AI</span> productivity tools, and{" "}
+          <span className="text-black font-semibold">business insights</span>.
+        </span>
+      </p>
 
-            {/* Subscribe */}
-            <form onSubmit={handleSubscribe} className="w-full max-w-md mx-auto">
-              <div className="flex items-center h-14 bg-gray-100 border-2 border-[#BFDCDD] rounded-full overflow-hidden focus-within:border-[#91b8ba]">
-                <input
-                  type="email"
-                  required
-                  placeholder="Your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 h-full bg-transparent px-6 text-sm sm:text-base text-gray-700 outline-none"
-                />
-                <button
-                  type="submit"
-                  className="h-full bg-[#0D868C] hover:bg-[#0A6266] text-white font-semibold px-8 rounded-full text-sm sm:text-base transition-all"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
+      {/* Subscribe */}
+      <form onSubmit={handleSubscribe} className="w-full max-w-md mx-auto">
+        <div className="flex items-center h-14 bg-gray-100 border-2 border-[#BFDCDD] rounded-full overflow-hidden focus-within:border-[#91b8ba]">
+          <input
+            type="email"
+            required
+            placeholder="Your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="flex-1 h-full bg-transparent px-6 text-sm sm:text-base text-gray-700 outline-none"
+          />
+          <button
+            type="submit"
+            className="h-full bg-[#0D868C] hover:bg-[#0A6266] text-white font-semibold px-8 rounded-full text-sm sm:text-base transition-all"
+          >
+            Subscribe
+          </button>
+        </div>
+      </form>
 
-            <span className="mt-3 block text-sm">
-              no noise. no spam. Just opportunities that matter.
-            </span>
-          </div>
+      <span className="mt-3 block text-sm">
+        no noise. no spam. Just opportunities that matter.
+      </span>
 
-          {/* Stats */}
-          <StatsSection />
+    </div>
+
+    <StatsSection />
+        </div>
         </div>
       </section>
     </>
