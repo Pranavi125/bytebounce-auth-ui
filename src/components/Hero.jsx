@@ -134,9 +134,9 @@ export default function MainHero() {
 
         {/* Main Content */}
         <div className="flex-1 flex justify-center">
-  <div className="container mx-auto px-4 flex flex-col justify-center">
+  <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
 
-    <div className="max-w-4xl mx-auto text-center mb-12 px-3 sm:px-0">
+    <div className="max-w-4xl mx-auto text-center mb-12 ">
 
       {/* Badge */}
       <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-[#0D868C0D] border border-[#0D868C33] rounded-full">
@@ -150,9 +150,9 @@ export default function MainHero() {
       </div>
 
       {/* Heading */}
-      <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+      <h1 className="text-center text-4xl md:text-6xl font-bold leading-tight text-black">
         Launch Your Career With{" "}
-        <span className="text-5xl bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+        <span className="block md:inline text-5xl bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
           ByteBounce
         </span>
       </h1>
@@ -193,7 +193,7 @@ export default function MainHero() {
       </form>
 
       <span className="mt-3 block text-sm">
-        no noise. no spam. Just opportunities that matter.
+        No noise. No spam. Just opportunities that matter.
       </span>
 
     </div>
