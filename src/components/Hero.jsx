@@ -134,17 +134,17 @@ export default function MainHero() {
 
         {/* Main Content */}
         <div className="flex-1 flex justify-center">
-  <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+  <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex flex-col justify-center">
 
     <div className="max-w-4xl mx-auto text-center mb-12 ">
 
       {/* Badge */}
-      <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-[#0D868C0D] border border-[#0D868C33] rounded-full">
+      <div className="inline-flex flex-wrap items-center gap-2 mb-8 px-4 py-2 bg-[#0D868C0D] border border-[#0D868C33] rounded-full max-w-full">
         <div className="relative flex h-2 w-2">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0D868C] opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D868C]"></span>
         </div>
-        <span className="text-sm font-medium text-[#0D868C]">
+        <span className="text-sm font-medium text-[#0D868C] break-words text-center">
           new opportunities every week
         </span>
       </div>
@@ -181,11 +181,11 @@ export default function MainHero() {
             placeholder="Your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 h-full bg-transparent px-6 text-sm sm:text-base text-gray-700 outline-none"
+            className="flex-1 min-w-0 h-full bg-transparent px-4 sm:px-6 text-sm sm:text-base text-gray-700 outline-none"
           />
           <button
             type="submit"
-            className="h-full bg-[#0D868C] hover:bg-[#0A6266] text-white font-semibold px-8 rounded-full text-sm sm:text-base transition-all"
+            className="h-full bg-[#0D868C] hover:bg-[#0A6266] text-white font-semibold px-8  rounded-full text-sm sm:text-base transition-all shrink-0"
           >
             Subscribe
           </button>
