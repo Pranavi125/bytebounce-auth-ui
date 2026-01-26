@@ -9,7 +9,7 @@ const StatsSection = () => {
         flex items-center justify-center
         gap-5 sm:gap-7 lg:gap-10
         text-sm text-slate-600
-         whitespace-nowrap
+        overflow-x-auto whitespace-nowrap
         px-4 
       "
     >
