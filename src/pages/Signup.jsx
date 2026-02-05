@@ -45,7 +45,20 @@ export default function Signup() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
 
+      /* existing */
       localStorage.setItem("authUser", JSON.stringify(data.user));
+
+      /* ---------- ADD THIS (for avatar/navbar) ---------- */
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: data.user.fullName || data.user.full_name,
+          email: data.user.email,
+          ...data.user,
+        })
+      );
+      /* -------------------------------------------------- */
+
       navigate("/");
     } catch (err) {
       setError(err.message || "Signup failed");
