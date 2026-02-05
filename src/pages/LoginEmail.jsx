@@ -26,22 +26,38 @@ export default function LoginEmail() {
     const userParam = searchParams.get("user");
 
     if (userParam) {
-      const user = JSON.parse(decodeURIComponent(userParam));
+      try {
+        let decoded = decodeURIComponent(userParam);
 
-      // store user
-      localStorage.setItem(
-        "authUser",
-        JSON.stringify({
+        // handle github/google sometimes encoding twice
+        if (decoded.startsWith("%7B")) {
+          decoded = decodeURIComponent(decoded);
+        }
+
+        const user = JSON.parse(decoded);
+
+        const normalizedUser = {
           id: user.id || user.user_id,
           ...user,
-        })
-      );
+          fullName:
+            user.fullName ||
+            user.name ||
+            user.displayName ||
+            user.username ||
+            user.email
+        };
 
-      // clean URL
-      window.history.replaceState({}, "", "/");
+        /* store for auth */
+        localStorage.setItem("authUser", JSON.stringify(normalizedUser));
 
-      // 🔥 REDIRECT TO HOMEPAGE
-      navigate("/", { replace: true });
+        /* IMPORTANT for avatar navbar */
+        localStorage.setItem("user", JSON.stringify(normalizedUser));
+
+        window.history.replaceState({}, "", "/");
+        navigate("/", { replace: true });
+      } catch (err) {
+        console.error("OAuth parse error:", err);
+      }
     }
   }, [searchParams, navigate]);
 
@@ -67,9 +83,19 @@ export default function LoginEmail() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
 
-      localStorage.setItem("authUser", JSON.stringify(data.user));
+      const normalizedUser = {
+        ...data.user,
+        fullName:
+          data.user.fullName ||
+          data.user.name ||
+          data.user.displayName ||
+          data.user.username ||
+          data.user.email
+      };
 
-      // 🔥 EMAIL LOGIN → HOME
+      localStorage.setItem("authUser", JSON.stringify(normalizedUser));
+      localStorage.setItem("user", JSON.stringify(normalizedUser));
+
       navigate("/", { replace: true });
     } catch (err) {
       setError(err.message || "Login failed");
@@ -81,7 +107,6 @@ export default function LoginEmail() {
   return (
     <div className="bg-auth">
       <div className="auth-card-login">
-        {/* CLOSE */}
         <div className="auth-header">
           <button onClick={() => navigate("/")}>
             <X size={18} />

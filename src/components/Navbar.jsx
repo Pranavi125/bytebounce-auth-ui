@@ -1,21 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Avatar from "./Avatar";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user"))
+  );
+
   const navigate = useNavigate();
 
-  /* ------------------ SUBSCRIBE HANDLER ------------------ */
+  /* -------- refresh user after login / oauth -------- */
+  useEffect(() => {
+    const loadUser = () => {
+      const stored = localStorage.getItem("user");
+      setUser(stored ? JSON.parse(stored) : null);
+    };
+
+    window.addEventListener("storage", loadUser);
+    window.addEventListener("focus", loadUser);
+
+    return () => {
+      window.removeEventListener("storage", loadUser);
+      window.removeEventListener("focus", loadUser);
+    };
+  }, []);
+
   const onSubscribe = () => {
     setOpenModal(true);
     setIsOpen(false);
   };
 
-  /* ------------------ SECTION NAVIGATION ------------------ */
   const navigateToSection = (section) => {
     setIsOpen(false);
+
+    if (section === "Jobs") {
+      navigate("/jobs");
+      return;
+    }
 
     if (window.location.pathname !== "/") {
       navigate("/");
@@ -45,7 +69,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ---------------- SUBSTACK MODAL ---------------- */}
       {openModal && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-6 w-full max-w-lg shadow-xl relative">
@@ -68,16 +91,13 @@ export default function Navbar() {
               frameBorder="0"
               scrolling="no"
             ></iframe>
-            {/* <iframe src="https://bytebounce.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe> */}
           </div>
         </div>
       )}
 
-      {/* ---------------- NAVBAR ---------------- */}
       <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-40">
         <div className="max-w-7xl mx-auto px-6 p-1 flex justify-between items-center">
-          
-          {/* Logo */}
+
           <div
             className="font-semibold cursor-pointer"
             onClick={() => navigate("/")}
@@ -85,70 +105,49 @@ export default function Navbar() {
             <img src="/bytebounce.png" alt="ByteBounce" className="h-18" />
           </div>
 
-          {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-10 text-lg">
-            {["Home", "Newsletter", "About"].map((item) => (
+            {["Home", "Newsletter", "Jobs", "About"].map((item) => (
               <li key={item} className="relative group cursor-pointer">
                 <span
                   onClick={() => navigateToSection(item)}
                   className="group-hover:text-[#0D868C] transition-colors"
                 >
-                  {item}
+                  {item === "Jobs" ? "Jobs & Internships" : item}
                 </span>
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#0D868C] transition-all group-hover:w-full"></span>
               </li>
             ))}
           </ul>
 
-          {/* Desktop Subscribe */}
-          <button
-            onClick={onSubscribe}
-            className="hidden md:block bg-[#0D868C] text-white px-5 py-2 rounded-full hover:bg-[#0A6266] transition-all hover:scale-105 active:scale-95"
-          >
-            Subscribe Now
-          </button>
+          <div className="hidden md:flex items-center gap-4">
 
-          {/* Mobile Menu Icon */}
+            {user ? (
+              <Avatar user={user} />   
+            ) : (
+              <button
+                onClick={() => navigate("/login-email")}
+                className="px-4 py-2 border rounded-full hover:bg-gray-50"
+              >
+                Login
+              </button>
+            )}
+
+            <button
+              onClick={onSubscribe}
+              className="bg-[#0D868C] text-white px-5 py-2 rounded-full hover:bg-[#0A6266] transition-all hover:scale-105 active:scale-95"
+            >
+              Subscribe Now
+            </button>
+          </div>
+
           <div className="md:hidden">
             {isOpen ? (
-              <X
-                size={28}
-                onClick={() => setIsOpen(false)}
-                className="cursor-pointer text-[#0D868C]"
-              />
+              <X size={28} onClick={() => setIsOpen(false)} className="cursor-pointer text-[#0D868C]" />
             ) : (
-              <Menu
-                size={28}
-                onClick={() => setIsOpen(true)}
-                className="cursor-pointer"
-              />
+              <Menu size={28} onClick={() => setIsOpen(true)} className="cursor-pointer" />
             )}
           </div>
         </div>
-
-        {/* Mobile Dropdown */}
-        {isOpen && (
-          <div className="md:hidden bg-white shadow-lg absolute top-full left-0 right-0 border-t">
-            <ul className="flex flex-col items-center space-y-4 py-6 text-lg">
-              {["Home", "Newsletter", "About"].map((item) => (
-                <li
-                  key={item}
-                  className="cursor-pointer py-2 px-8 rounded-lg hover:bg-gray-50 w-full text-center"
-                  onClick={() => navigateToSection(item)}
-                >
-                  {item}
-                </li>
-              ))}
-
-              <button
-                onClick={onSubscribe}
-                className="bg-[#0D868C] text-white px-8 py-3 rounded-full hover:bg-[#0A6266] transition-all"
-              >
-                Subscribe Now
-              </button>
-            </ul>
-          </div>
-        )}
       </nav>
     </>
   );
