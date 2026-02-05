@@ -29,7 +29,14 @@ export default function LoginEmail() {
       const user = JSON.parse(decodeURIComponent(userParam));
 
       // store user
-      localStorage.setItem("authUser", JSON.stringify(user));
+      localStorage.setItem(
+  "authUser",
+  JSON.stringify({
+    id: data.user.id || data.user.user_id, // ✅ normalize here
+    ...data.user
+  })
+);
+
 
       // clean URL
       window.history.replaceState({}, "", "/");

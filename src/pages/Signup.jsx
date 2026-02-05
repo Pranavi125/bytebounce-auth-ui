@@ -6,9 +6,8 @@ import "../auth.css";
 export default function Signup() {
   const navigate = useNavigate();
 
-  // ✅ REQUIRED FOR DATABASE + AVATAR
+  // Required fields
   const [fullName, setFullName] = useState("");
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -58,7 +57,6 @@ export default function Signup() {
   return (
     <div className="bg-auth">
       <div className="auth-card-small">
-
         {/* HEADER */}
         <div className="flex justify-between mb-3">
           <ArrowLeft size={18} onClick={() => navigate("/login")} />
@@ -74,7 +72,6 @@ export default function Signup() {
         {error && <div className="auth-error">{error}</div>}
 
         <form onSubmit={handleSubmit} autoComplete="off">
-
           <div className="auth-field">
             <input
               className="auth-input"
@@ -127,7 +124,11 @@ export default function Signup() {
                 setShowConfirmPassword(!showConfirmPassword)
               }
             >
-              {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              {showConfirmPassword ? (
+                <EyeOff size={18} />
+              ) : (
+                <Eye size={18} />
+              )}
             </span>
           </div>
 
@@ -140,7 +141,6 @@ export default function Signup() {
           Already have an account?{" "}
           <span onClick={() => navigate("/login")}>Log in</span>
         </div>
-
       </div>
     </div>
   );

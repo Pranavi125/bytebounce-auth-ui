@@ -1,22 +1,31 @@
-import dotenv from "dotenv";
-dotenv.config();
-
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import passport from "passport"; // ✅ REQUIRED
-import authRoutes from "./routes/auth.routes.js";
+import passport from "passport";
 
-// ⚠️ IMPORTANT: this imports your strategies
-import "./config/passport.js"; // ✅ REQUIRED
+import authRoutes from "./routes/auth.routes.js";
+import newsletterRoutes from "./routes/newsletter.routes.js";
+import jobRoutes from "./routes/job.routes.js";
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 
-// ✅ PASSPORT INITIALIZE (THIS WAS MISSING)
+app.use(express.json());
 app.use(passport.initialize());
 
-app.use("/api/auth", authRoutes);
+await import("./config/passport.js");
 
-export default app;
+app.use("/api/auth", authRoutes);
+app.use("/api/newsletter", newsletterRoutes);
+app.use("/api/jobs", jobRoutes);
+
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => {
+  console.log(`Backend running on http://localhost:${PORT}`);
+});

@@ -1,23 +1,101 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum JobType {
+  FullTime
+  Remote
+  Intern
+  ContractBased
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
+  id                 String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  fullName           String?
+  email              String    @unique
+  passwordHash       String?
+  role               String?   @default("user")
+  createdAt          DateTime? @default(now()) @db.Timestamp(6)
+  provider           String?   @default("local")
+  providerId         String?
+  resetToken         String?
+  resetTokenExpiry   DateTime? @db.Timestamp(6)
+
+  jobApplications       JobApplication[]
+  passwordResetTokens   PasswordResetToken[]
+  savedJobs             SavedJob[]
+
+  @@map("user")
+}
+
+model PasswordResetToken {
+  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId     String    @db.Uuid
+  tokenHash  String
+  expiresAt  DateTime  @db.Timestamp(6)
+  used       Boolean?  @default(false)
+  createdAt  DateTime? @default(now()) @db.Timestamp(6)
+
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Newsletter {
-  id           String   @id @default(uuid())
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   email        String   @unique
-  subscribedAt DateTime @default(now())
+  subscribedAt DateTime @default(now()) @db.Timestamp(6)
+}
+
+model Job {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  company     String
+  description String
+  jobType     JobType?
+  experience  String
+  location    String
+  isRemote    Boolean   @default(false)
+  tags        String[]
+
+  salary      String?
+  salaryMin   Int?
+  salaryMax   Int?
+
+  postedAt    DateTime? @db.Timestamp(6)
+  applyUrl    String?
+  logo        String?
+
+  createdAt   DateTime  @default(now()) @db.Timestamp(6)
+
+  applications JobApplication[]
+  savedBy      SavedJob[]
+
+  @@unique([title, company])
+}
+
+model JobApplication {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  jobId     String   @db.Uuid
+  userId    String   @db.Uuid
+  appliedAt DateTime @default(now()) @db.Timestamp(6)
+
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, userId])
+}
+
+model SavedJob {
+  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  jobId   String @db.Uuid
+  userId  String @db.Uuid
+
+  job     Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, userId])
 }

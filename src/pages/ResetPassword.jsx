@@ -62,7 +62,6 @@ export default function ResetPassword() {
   return (
     <div className="bg-auth">
       <div className="auth-card-small">
-
         {/* CLOSE */}
         <div className="flex justify-end mb-3">
           <X size={18} onClick={() => navigate("/")} />
@@ -86,7 +85,10 @@ export default function ResetPassword() {
               autoComplete="new-password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span className="auth-eye" onClick={() => setShowPassword(!showPassword)}>
+            <span
+              className="auth-eye"
+              onClick={() => setShowPassword(!showPassword)}
+            >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </span>
           </div>
@@ -114,7 +116,6 @@ export default function ResetPassword() {
             {loading ? "Resetting..." : "Reset password"}
           </button>
         </form>
-
       </div>
     </div>
   );

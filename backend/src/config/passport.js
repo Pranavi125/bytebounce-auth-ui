@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Strategy as GitHubStrategy } from "passport-github2";
-import pool from "./db.js"; // ✅ FIXED PATH
+import prisma from "./prisma.js";
 
 /* ================= GOOGLE STRATEGY ================= */
 passport.use(
@@ -20,25 +20,23 @@ passport.use(
           return done(new Error("No email from Google"), null);
         }
 
-        // 🔍 check user
-        const existing = await pool.query(
-          "SELECT * FROM users WHERE email = $1",
-          [email]
-        );
+        let user = await prisma.user.findUnique({
+          where: { email },
+        });
 
-        if (existing.rows.length) {
-          return done(null, existing.rows[0]);
+        if (!user) {
+          user = await prisma.user.create({
+            data: {
+              full_name: fullName,
+              email,
+              provider: "google",
+              provider_id: profile.id,
+              password_hash: null,
+            },
+          });
         }
 
-        // ➕ create user
-        const created = await pool.query(
-          `INSERT INTO users (full_name, email)
-           VALUES ($1, $2)
-           RETURNING id, full_name, email`,
-          [fullName, email]
-        );
-
-        return done(null, created.rows[0]);
+        return done(null, user);
       } catch (err) {
         console.error("Google OAuth error:", err);
         return done(err, null);
@@ -54,7 +52,6 @@ passport.use(
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       callbackURL: process.env.GITHUB_CALLBACK_URL,
-      scope: ["user:email"],
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -65,23 +62,23 @@ passport.use(
 
         const fullName = profile.displayName || profile.username;
 
-        const existing = await pool.query(
-          "SELECT * FROM users WHERE email = $1",
-          [email]
-        );
+        let user = await prisma.user.findUnique({
+          where: { email },
+        });
 
-        if (existing.rows.length) {
-          return done(null, existing.rows[0]);
+        if (!user) {
+          user = await prisma.user.create({
+            data: {
+              full_name: fullName,
+              email,
+              provider: "github",
+              provider_id: profile.id,
+              password_hash: null,
+            },
+          });
         }
 
-        const created = await pool.query(
-          `INSERT INTO users (full_name, email)
-           VALUES ($1, $2)
-           RETURNING id, full_name, email`,
-          [fullName, email]
-        );
-
-        return done(null, created.rows[0]);
+        return done(null, user);
       } catch (err) {
         console.error("GitHub OAuth error:", err);
         return done(err, null);

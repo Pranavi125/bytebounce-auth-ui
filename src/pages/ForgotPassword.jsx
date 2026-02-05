@@ -39,7 +39,6 @@ export default function ForgotPassword() {
   return (
     <div className="bg-auth">
       <div className="auth-card-small">
-
         {/* HEADER */}
         <div className="flex justify-between mb-4">
           <button
@@ -58,7 +57,6 @@ export default function ForgotPassword() {
         {/* BRAND */}
         <h1 className="auth-brand">ByteBounce</h1>
 
-        {/* ✅ FORGOT PASSWORD TEXT (BLACK) */}
         <p
           style={{
             textAlign: "center",
@@ -70,7 +68,6 @@ export default function ForgotPassword() {
           Forgot password
         </p>
 
-        {/* FORM */}
         <form onSubmit={handleSubmit}>
           <div className="auth-field">
             <input
@@ -88,15 +85,10 @@ export default function ForgotPassword() {
             </p>
           )}
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="auth-btn"
-          >
+          <button type="submit" disabled={loading} className="auth-btn">
             {loading ? "Sending..." : "Send reset link"}
           </button>
         </form>
-
       </div>
     </div>
   );
