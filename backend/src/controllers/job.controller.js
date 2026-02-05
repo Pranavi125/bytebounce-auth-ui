@@ -11,7 +11,7 @@ const ensureUserExists = async (userId) => {
       data: {
         id: userId,
         email: `${userId}@bytebounce.dev`,
-        full_name: "Auto Created User",
+        fullName: "Auto Created User",
         provider: "local",
       },
     });
@@ -35,10 +35,9 @@ const ensureJobExists = async (job) => {
         title: job.title,
         company: job.company,
         description: job.description,
-        type: job.type,
+        jobType: job.jobType || "full_time",   // ✅ FIX
         experience: job.experience,
         location: job.location,
-        isRemote: job.isRemote ?? false,
         tags: job.tags ?? [],
       },
     });
@@ -51,7 +50,7 @@ const ensureJobExists = async (job) => {
 export const getJobs = async (req, res) => {
   try {
     const jobs = await prisma.job.findMany({
-      orderBy: { created_at: "desc" },
+      orderBy: { createdAt: "desc" },
     });
     res.json(jobs);
   } catch (err) {
@@ -83,16 +82,15 @@ export const toggleSaveJob = async (req, res) => {
 
     await ensureUserExists(userId);
 
-    // ✅ support BOTH DB jobs & frontend job object
     const dbJob = job
       ? await ensureJobExists(job)
       : await prisma.job.findUnique({ where: { id: jobId } });
 
     const exists = await prisma.savedJob.findUnique({
       where: {
-        job_id_user_id: {
-          job_id: dbJob.id,
-          user_id: userId,
+        jobId_userId: {
+          jobId: dbJob.id,
+          userId,
         },
       },
     });
@@ -100,9 +98,9 @@ export const toggleSaveJob = async (req, res) => {
     if (exists) {
       await prisma.savedJob.delete({
         where: {
-          job_id_user_id: {
-            job_id: dbJob.id,
-            user_id: userId,
+          jobId_userId: {
+            jobId: dbJob.id,
+            userId,
           },
         },
       });
@@ -111,8 +109,8 @@ export const toggleSaveJob = async (req, res) => {
 
     const saved = await prisma.savedJob.create({
       data: {
-        job_id: dbJob.id,
-        user_id: userId,
+        jobId: dbJob.id,
+        userId,
       },
     });
 
@@ -141,8 +139,8 @@ export const applyJob = async (req, res) => {
 
     const applied = await prisma.jobApplication.create({
       data: {
-        job_id: dbJob.id,
-        user_id: userId,
+        jobId: dbJob.id,
+        userId,
       },
     });
 
@@ -160,7 +158,7 @@ export const applyJob = async (req, res) => {
 export const getSavedJobs = async (req, res) => {
   try {
     const saved = await prisma.savedJob.findMany({
-      where: { user_id: req.params.userId },
+      where: { userId: req.params.userId },
       include: { job: true },
     });
     res.json(saved.map((s) => s.job));
@@ -173,7 +171,7 @@ export const getSavedJobs = async (req, res) => {
 export const getAppliedJobs = async (req, res) => {
   try {
     const applied = await prisma.jobApplication.findMany({
-      where: { user_id: req.params.userId },
+      where: { userId: req.params.userId },
       include: { job: true },
     });
     res.json(applied);

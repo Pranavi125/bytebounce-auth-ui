@@ -8,10 +8,10 @@ datasource db {
 }
 
 enum JobType {
-  FullTime
-  Remote
-  Intern
-  ContractBased
+  full_time
+  remote
+  intern
+  contract_based
 }
 
 model User {
@@ -30,7 +30,7 @@ model User {
   passwordResetTokens   PasswordResetToken[]
   savedJobs             SavedJob[]
 
-  @@map("user")
+  @@map("users")
 }
 
 model PasswordResetToken {
@@ -42,12 +42,16 @@ model PasswordResetToken {
   createdAt  DateTime? @default(now()) @db.Timestamp(6)
 
   user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("password_reset_tokens")
 }
 
 model Newsletter {
   id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   email        String   @unique
   subscribedAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@map("newsletter")
 }
 
 model Job {
@@ -55,10 +59,9 @@ model Job {
   title       String
   company     String
   description String
-  jobType     JobType?
+  jobType     JobType
   experience  String
   location    String
-  isRemote    Boolean   @default(false)
   tags        String[]
 
   salary      String?
@@ -75,6 +78,7 @@ model Job {
   savedBy      SavedJob[]
 
   @@unique([title, company])
+  @@map("jobs")
 }
 
 model JobApplication {
@@ -87,6 +91,7 @@ model JobApplication {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([jobId, userId])
+  @@map("job_applications")
 }
 
 model SavedJob {
@@ -98,4 +103,5 @@ model SavedJob {
   user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([jobId, userId])
+  @@map("saved_jobs")
 }

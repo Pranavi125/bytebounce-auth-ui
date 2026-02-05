@@ -19,10 +19,10 @@ const USER_ID = "f320819b-7602-4f2d-b545-61924d18ee99";
 /* ================= FILTER OPTIONS ================= */
 
 const jobTypeOptions = [
-  { value: "Full-time", label: "Full-time" },
-  { value: "Part-time", label: "Part-time" },
-  { value: "Internship", label: "Internship" },
-  { value: "Contract", label: "Contract" },
+  { value: "full_time", label: "Full-time" },
+  { value: "remote", label: "Remote" },
+  { value: "intern", label: "Internship" },
+  { value: "contract_based", label: "Contract" },
 ];
 
 const experienceOptions = [
@@ -93,7 +93,7 @@ const Jobs = () => {
         job.description.toLowerCase().includes(q);
 
       const matchesJobType =
-        !selectedJobTypes.length || selectedJobTypes.includes(job.type);
+        !selectedJobTypes.length || selectedJobTypes.includes(job.jobType);
 
       const matchesExperience =
         !selectedExperience.length ||
@@ -105,8 +105,8 @@ const Jobs = () => {
 
       const matchesWorkMode =
         !selectedWorkMode.length ||
-        (selectedWorkMode.includes("remote") && job.isRemote) ||
-        (selectedWorkMode.includes("onsite") && !job.isRemote);
+        (selectedWorkMode.includes("remote") && job.jobType === "remote") ||
+        (selectedWorkMode.includes("onsite") && job.jobType !== "remote");
 
       return (
         matchesSearch &&
@@ -150,7 +150,6 @@ const Jobs = () => {
     }
   };
 
-  // ✅ ONLY FIX: SEND FULL JOB TO APPLY
   const handleApplyJob = async (job) => {
     try {
       await axios.post(
@@ -189,7 +188,9 @@ const Jobs = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">Jobs & </span>
+            <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
+              Jobs & 
+            </span>
             <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
               Internships
             </span>

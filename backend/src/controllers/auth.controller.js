@@ -20,18 +20,18 @@ export const signup = async (req, res) => {
       return res.status(400).json({ message: "Email already registered" });
     }
 
-    const password_hash = await bcrypt.hash(password, 10);
+    const passwordHash = await bcrypt.hash(password, 10);
 
     const user = await prisma.user.create({
       data: {
-        full_name,
+        fullName: full_name,
         email,
-        password_hash,
+        passwordHash,
         provider: "local",
       },
       select: {
         id: true,
-        full_name: true,
+        fullName: true,
         email: true,
       },
     });
@@ -55,11 +55,11 @@ export const login = async (req, res) => {
       where: { email },
     });
 
-    if (!user || !user.password_hash) {
+    if (!user || !user.passwordHash) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const match = await bcrypt.compare(password, user.password_hash);
+    const match = await bcrypt.compare(password, user.passwordHash);
 
     if (!match) {
       return res.status(401).json({ message: "Invalid credentials" });
@@ -68,7 +68,7 @@ export const login = async (req, res) => {
     res.json({
       user: {
         id: user.id,
-        full_name: user.full_name,
+        full_name: user.fullName,
         email: user.email,
       },
     });
@@ -104,13 +104,13 @@ export const forgotPassword = async (req, res) => {
       .update(resetToken)
       .digest("hex");
 
-    const expiresAt = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
+    const expiresAt = new Date(Date.now() + 15 * 60 * 1000);
 
     await prisma.user.update({
       where: { id: user.id },
       data: {
-        reset_token: hashedToken,
-        reset_token_expiry: expiresAt,
+        resetToken: hashedToken,
+        resetTokenExpiry: expiresAt,
       },
     });
 
@@ -151,8 +151,8 @@ export const resetPassword = async (req, res) => {
 
     const user = await prisma.user.findFirst({
       where: {
-        reset_token: hashedToken,
-        reset_token_expiry: {
+        resetToken: hashedToken,
+        resetTokenExpiry: {
           gt: new Date(),
         },
       },
@@ -164,14 +164,14 @@ export const resetPassword = async (req, res) => {
         .json({ message: "Reset link is invalid or expired" });
     }
 
-    const password_hash = await bcrypt.hash(password, 10);
+    const passwordHash = await bcrypt.hash(password, 10);
 
     await prisma.user.update({
       where: { id: user.id },
       data: {
-        password_hash,
-        reset_token: null,
-        reset_token_expiry: null,
+        passwordHash,
+        resetToken: null,
+        resetTokenExpiry: null,
       },
     });
 

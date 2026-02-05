@@ -30,13 +30,12 @@ export default function LoginEmail() {
 
       // store user
       localStorage.setItem(
-  "authUser",
-  JSON.stringify({
-    id: data.user.id || data.user.user_id, // ✅ normalize here
-    ...data.user
-  })
-);
-
+        "authUser",
+        JSON.stringify({
+          id: user.id || user.user_id,
+          ...user,
+        })
+      );
 
       // clean URL
       window.history.replaceState({}, "", "/");
@@ -82,7 +81,6 @@ export default function LoginEmail() {
   return (
     <div className="bg-auth">
       <div className="auth-card-login">
-
         {/* CLOSE */}
         <div className="auth-header">
           <button onClick={() => navigate("/")}>
@@ -163,7 +161,6 @@ export default function LoginEmail() {
           Don’t have an account?{" "}
           <span onClick={() => navigate("/signup")}>Create one</span>
         </div>
-
       </div>
     </div>
   );

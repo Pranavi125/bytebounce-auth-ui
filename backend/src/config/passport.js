@@ -27,11 +27,11 @@ passport.use(
         if (!user) {
           user = await prisma.user.create({
             data: {
-              full_name: fullName,
+              fullName: fullName,
               email,
               provider: "google",
-              provider_id: profile.id,
-              password_hash: null,
+              providerId: profile.id,
+              passwordHash: null,
             },
           });
         }
@@ -69,11 +69,11 @@ passport.use(
         if (!user) {
           user = await prisma.user.create({
             data: {
-              full_name: fullName,
+              fullName: fullName,
               email,
               provider: "github",
-              provider_id: profile.id,
-              password_hash: null,
+              providerId: profile.id,
+              passwordHash: null,
             },
           });
         }
