@@ -189,7 +189,7 @@ const Jobs = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            <span className="text-foreground">Jobs & </span>
+            <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">Jobs & </span>
             <span className="bg-gradient-to-r from-[#00A8C5] via-[#56C596] to-[#e7af73] bg-clip-text text-transparent">
               Internships
             </span>
