@@ -1,0 +1,628 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   DEBUG MODE (TEMPORARY – UNCHANGED)
+   ===================================================== */
+
+/* Scope Vite demo styles ONLY */
+.vite-demo {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+/* =====================================================
+   DESIGN SYSTEM (UNCHANGED)
+   ===================================================== */
+@layer base {
+  :root {
+    --grid-color: 210 20% 85%;
+
+    --background: 0 0% 100%;
+    --foreground: 207 47% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 207 47% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 47% 15%;
+
+    --primary: 183 83% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 207 47% 15%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 207 18% 50%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 207 47% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 186 30% 80%;
+    --input: 186 30% 80%;
+    --ring: 183 83% 30%;
+
+    --radius: 0.5rem;
+
+    /* ByteBounce tokens */
+    --bytebounce-teal: 183 83% 30%;
+    --bytebounce-teal-hover: 183 83% 22%;
+    --bytebounce-dark: 207 47% 15%;
+    --bytebounce-muted: 207 18% 50%;
+    --bytebounce-border: 186 30% 80%;
+    --bytebounce-light-bg: 210 50% 96%;
+    --bytebounce-gradient: linear-gradient(
+      to right,
+      #00A8C5,
+      #56C596,
+      #e7af73
+    );
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* body {
+    @apply bg-background text-foreground;
+  } */
+}
+
+/* =====================================================
+   AUTH UI (SCOPED — SAFE)
+   ===================================================== */
+.bg-auth {
+  background: radial-gradient(
+    circle at top right,
+    #dff3ef 0%,
+    #faf9f5 45%
+  );
+}
+
+.auth-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at right, black 45%, transparent 75%);
+}
+
+.auth-icon {
+  @apply absolute w-14 h-14 rounded-xl flex items-center justify-center text-2xl shadow-sm;
+  animation: auth-float 8s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes auth-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* =====================================================
+   YOUR ORIGINAL VITE CSS (UNTOUCHED)
+   ===================================================== */
+/* App root must be full-width */
+#root {
+  min-height: 100vh;
+}
+
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* Mint grid background */
+.bg-grid {
+  background-color: #f8fdfb;
+  background-image:
+    linear-gradient(#d1fae5 1px, transparent 1px),
+    linear-gradient(90deg, #d1fae5 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+/* FIXED */
+.bg-grid-pattern {
+  background-color: #fafdfb;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+
+.jobs-bg {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, #e9f7f2 0%, #f6f3e9 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.04) 0,
+      rgba(0,0,0,0.04) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.04) 0,
+      rgba(0,0,0,0.04) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  padding-bottom: 80px;
+}
+
+.jobs-hero {
+  background: white;
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 48px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.jobs-hero h1 span {
+  color: #22c55e;
+}
+
+.badge {
+  background: #dcfce7;
+  color: #166534;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 32px;
+}
+
+.filter {
+  position: relative;
+}
+
+.filter button {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 12px;
+  z-index: 20;
+}
+
+.dropdown p {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.jobs-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.job-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.tags span {
+  background: #dcfce7;
+  color: #166534;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-right: 8px;
+  font-size: 13px;
+}
+
+.apply {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+/* =====================================================
+   JOBS PAGE BACKGROUND (GRID + GRADIENT)
+   ===================================================== */
+
+.jobs-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, #e9f7f2 0%, #f6f3e9 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.06) 0,
+      rgba(0,0,0,0.06) 1px,
+      transparent 1px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.06) 0,
+      rgba(0,0,0,0.06) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   DEBUG MODE (TEMPORARY – UNCHANGED)
+   ===================================================== */
+
+/* Scope Vite demo styles ONLY */
+.vite-demo {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+/* =====================================================
+   DESIGN SYSTEM (UNCHANGED)
+   ===================================================== */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 207 47% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 207 47% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 47% 15%;
+
+    --primary: 183 83% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 207 47% 15%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 207 18% 50%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 207 47% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 186 30% 80%;
+    --input: 186 30% 80%;
+    --ring: 183 83% 30%;
+
+    --radius: 0.5rem;
+
+    /* ByteBounce tokens */
+    --bytebounce-teal: 183 83% 30%;
+    --bytebounce-teal-hover: 183 83% 22%;
+    --bytebounce-dark: 207 47% 15%;
+    --bytebounce-muted: 207 18% 50%;
+    --bytebounce-border: 186 30% 80%;
+    --bytebounce-light-bg: 210 50% 96%;
+    --bytebounce-gradient: linear-gradient(
+      to right,
+      #00A8C5,
+      #56C596,
+      #e7af73
+    );
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* body {
+    @apply bg-background text-foreground;
+  } */
+}
+
+/* =====================================================
+   AUTH UI (SCOPED — SAFE)
+   ===================================================== */
+.bg-auth {
+  background: radial-gradient(
+    circle at top right,
+    #dff3ef 0%,
+    #faf9f5 45%
+  );
+}
+
+.auth-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at right, black 45%, transparent 75%);
+}
+
+.auth-icon {
+  @apply absolute w-14 h-14 rounded-xl flex items-center justify-center text-2xl shadow-sm;
+  animation: auth-float 8s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes auth-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* =====================================================
+   YOUR ORIGINAL VITE CSS (UNTOUCHED)
+   ===================================================== */
+#root {
+  min-height: 100vh;
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* Mint grid background */
+/* Jobs page grid background */
+/* =========================================
+   JOBS PAGE – TEXTURED GRID BACKGROUND
+   ========================================= */
+
+/* =====================================================
+   FINAL OVERRIDES — DO NOT REMOVE ANYTHING ABOVE
+   ===================================================== */
+
+/* Ensure app is full-width */
+#root {
+  min-height: 100vh;
+}
+/* =========================================
+   JOBS PAGE – CLEAN GRID LINES ONLY
+   ========================================= */
+/* =========================================
+   JOBS PAGE – GRID LINES ONLY (FINAL)
+   ========================================= */
+/* =========================================
+   JOBS PAGE – GRID BACKGROUND
+   ========================================= */
+
+.jobs-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f6fcf9; /* soft mint */
+  overflow: hidden;
+}
+
+.jobs-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(16, 185, 129, 0.25) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(16, 185, 129, 0.25) 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+}
+
+/* Ensure content stays above grid */
+.jobs-page > * {
+  position: relative;
+  z-index: 1;
+}

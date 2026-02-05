@@ -1,0 +1,383 @@
+/* ===============================
+   AUTH BACKGROUND (MATCH DESIGN)
+================================ */
+.bg-auth {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+
+  /* LEFT + RIGHT-BOTTOM BLUE, RIGHT-TOP SOFT */
+  background:
+    /* LEFT SOFT BLUE */
+    radial-gradient(
+      circle at 20% 55%,
+      rgba(120, 210, 200, 0.45),
+      transparent 60%
+    ),
+
+    /* RIGHT-BOTTOM BLUE (MATCH LEFT FEEL) */
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(120, 210, 200, 0.45),
+      transparent 60%
+    ),
+
+    /* RIGHT-TOP VERY SOFT WARM (KEEP LIGHT) */
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(245, 230, 210, 0.25),
+      transparent 55%
+    ),
+
+    /* BASE */
+    linear-gradient(
+      135deg,
+      #e6f6f4 0%,
+      #eefaf7 50%,
+      #fdf7ef 100%
+    );
+}
+
+/* GRID OVERLAY */
+.bg-auth::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 140px 140px;
+  pointer-events: none;
+}
+/* ===============================
+   DESKTOP / LARGE SCREEN TUNING
+================================ */
+/* ===============================
+   DESKTOP / LARGE SCREEN – WARM BALANCE
+================================ */
+@media (min-width: 900px) {
+  .bg-auth {
+    background:
+      /* LEFT – VERY SOFT BLUE */
+      radial-gradient(
+        circle at 28% 55%,
+        rgba(140, 215, 205, 0.35),
+        transparent 58%
+      ),
+
+      /* RIGHT-BOTTOM – REDUCED BLUE */
+      radial-gradient(
+        circle at 72% 78%,
+        rgba(140, 215, 205, 0.35),
+        transparent 58%
+      ),
+
+      /* WARM YELLOW – TOP RIGHT */
+      radial-gradient(
+        circle at 78% 18%,
+        rgba(255, 232, 190, 0.45),
+        transparent 55%
+      ),
+
+      /* WARM YELLOW – CENTER LEFT (NEW) */
+      radial-gradient(
+        circle at 22% 25%,
+        rgba(255, 236, 205, 0.40),
+        transparent 60%
+      ),
+
+      /* BASE GRADIENT (WARM BIAS) */
+      linear-gradient(
+        135deg,
+        #f0faf7 0%,
+        #f6fcf8 45%,
+        #fff4e6 100%
+      );
+  }
+
+  /* VERY SOFT VIGNETTE */
+  .bg-auth::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 60%,
+      rgba(0, 0, 0, 0.03) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+
+/* ===============================
+   CARDS
+================================ */
+.auth-card-small {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+  z-index: 1;
+}
+
+.auth-card-login {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  z-index: 1;
+}
+
+/* ===============================
+   BRAND & TITLES
+================================ */
+.auth-brand {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  background: linear-gradient(90deg,#00A8C5,#56C596,#E7AF73);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.auth-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.auth-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+.auth-field {
+  margin-bottom: 14px;
+}
+
+.auth-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+  border: none;
+  padding: 0 16px;
+  background: #eaf1ff;
+  font-size: 14px;
+  outline: none;
+}
+
+.auth-input:focus {
+  box-shadow: 0 0 0 2px rgba(0,168,197,0.35);
+}
+
+/* ===============================
+   PASSWORD (CUSTOM EYE ONLY)
+================================ */
+.auth-password {
+  position: relative;
+}
+
+.auth-password .auth-input {
+  padding-right: 48px;
+}
+
+.auth-eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+  user-select: none;
+}
+
+/* ===============================
+   REMOVE BROWSER PASSWORD EYE
+================================ */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.auth-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg,#00c2a8,#38d39f);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+}
+
+/* ===============================
+   FORGOT PASSWORD
+================================ */
+/* ===============================
+   FORGOT PASSWORD (RIGHT + BIGGER + UNDERLINE)
+================================ */
+.forgot-link {
+  display: block;
+  text-align: right;
+  font-size: 14px;              /* slightly bigger */
+  color: #22c1a1;               /* green */
+  font-weight: 600;
+  cursor: pointer;
+  margin: 6px 4px 14px 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===============================
+   OR TEXT (BLACK)
+================================ */
+.auth-divider {
+  text-align: center;
+  font-size: 13px;
+  color: #000;                  /* black */
+  margin: 18px 0 10px;
+}
+
+
+/* ===============================
+   OAUTH
+================================ */
+.auth-divider {
+  text-align: center;
+  font-size: 13px;
+  color: #000 !important; /* force black */
+  margin: 18px 0 10px;
+}
+
+
+.auth-social-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.auth-social {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.auth-social:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   FOOTER & ERROR
+================================ */
+.auth-footer {
+  text-align: center;
+  font-size: 14px;
+}
+
+
+
+.auth-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ===============================
+   LOGOUT DROPDOWN
+================================ */
+.logout-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  z-index: 20;
+}
+
+.logout-btn {
+  background: #fff;
+  border: none;
+  color: #ef4444;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+/* Forgot password link - GREEN */
+.forgot-link {
+  color: #22c1a1;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Create one link - GREEN */
+.auth-footer span {
+  color: #22c1a1;
+  font-weight: 700;
+  cursor: pointer;
+}
+
